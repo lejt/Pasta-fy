@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
+
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   'google',

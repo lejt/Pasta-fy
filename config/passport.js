@@ -1,8 +1,5 @@
-
 const passport = require('passport');
-
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
 const User = require('../models/user');
 
 passport.use(
@@ -40,7 +37,7 @@ cb(null, user._id);
 });
 
 passport.deserializeUser(function(userId, cb) {
-User.findById(userId).then(function(user) {
-    cb(null, user);
-});
+  User.findById(userId).then(function(user) {
+      cb(null, user);
+  });
 });

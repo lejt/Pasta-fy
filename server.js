@@ -7,15 +7,16 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
+var homeRouter = require('./routes/home');
+var ingredientsRouter = require('./routes/ingredients');
+var usersRouter = require('./routes/users');
+
 // first load your .env file
 require('dotenv').config();
 	
 // connect to the database with Mongoose
 require('./config/database');
 require('./config/passport');
-
-var homeRouter = require('./routes/home');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use(function (req, res, next) {
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
+app.use('/ingredients', ingredientsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
