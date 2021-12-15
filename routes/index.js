@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const passport = require('passport');
-const NAMECtrl = require('../controllers/FILENAME');
+// const NAMECtrl = require('../controllers/FILENAME');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

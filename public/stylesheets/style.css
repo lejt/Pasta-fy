@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 }
 
+#pastafyLogo {
+  height: 50px;
+}
+
 .login {
   display: flex;
   justify-content: center;
