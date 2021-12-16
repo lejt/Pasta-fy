@@ -1,35 +1,40 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
+const Build = require('../models/build');
 
 passport.use(
-    new GoogleStrategy(
-      // Configuration object
-      {
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_SECRET,
-        callbackURL: process.env.GOOGLE_CALLBACK
-      },
-      // The verify callback function
-      function(accessToken, refreshToken, profile, cb) {
-        // a user has logged in with OAuth...
-        User.findOne({ googleId: profile.id }).then(async function(user) {
-          if (user) return cb(null, user);
-          // We have a new user via OAuth!
-          try {
-            user = await User.create({
-              name: profile.displayName,
-              googleId: profile.id,
-              email: profile.emails[0].value,
-              avatar: profile.photos[0].value
-            });
-            return cb(null, user);
-          } catch (err) {
-            return cb(err);
-          }
+  new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_SECRET,
+    callbackURL: process.env.GOOGLE_CALLBACK
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOne({googleId: profile.id})
+    .then(async function(user) {
+      if (user) return cb(null, user);
+      try {
+        user = await User.create({
+          name: profile.displayName,
+          googleId: profile.id,
+          email: profile.emails[0].value,
+          avatar: profile.photos[0].value
         });
+        // create build here, assign user id property
+        build = await Build.create({
+          buildID: profile.id,
+          pasta: 'P',
+          sauce: 'S',
+          vege: 'V',
+          protein: 'M',
+        });
+
+        return cb(null, user);
+      } catch (err) {
+        return cb(err);
       }
-    )
+    })
+  })
 );
 
 passport.serializeUser(function(user, cb) {
@@ -38,6 +43,6 @@ passport.serializeUser(function(user, cb) {
 
 passport.deserializeUser(function(userId, cb) {
   User.findById(userId).then(function(user) {
-      cb(null, user);
-  });
+    cb(null, user);
+  })
 });

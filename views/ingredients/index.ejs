@@ -36,7 +36,7 @@
         <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
             <%= p.name %>
-            <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+            <form action="/ingredients/<%= p._id %>" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Basket</button>
             </form>
             <br>
@@ -76,7 +76,7 @@
      <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
             <%= p.name %>
-            <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+            <form action="/ingredients/<%= p._id %>" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Basket</button>
             </form>
             <br>
