@@ -1,6 +1,9 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(45deg, rgb(64, 86, 126), rgb(7, 21, 61));
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
 }
 
 a {

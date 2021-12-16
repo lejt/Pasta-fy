@@ -45,3 +45,17 @@ exports.sauce = [
     {name: "Puttanesca", base: "tomato"},
     {name: "Arrabbiata", base: "tomato"},
 ];
+
+exports.protein = [
+    {name: "Guanciale (salt-cured pork jowl)", animal: "pork"},
+    {name: "Pancetta (Italian bacon)", animal: "pork"},
+    {name: "Italian sausage", animal: "pork"},
+    {name: "Ground pork", animal: "pork"},
+    {name: "Ground beef", animal: "beef"},
+    {name: "Prosciutto (thin country ham)", animal: "pork"},
+    {name: "Oxtail", animal: "beef"},
+];
+
+exports.vege = [
+    {name: ""},
+];
