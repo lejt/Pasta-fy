@@ -4,6 +4,6 @@ const isLoggedIn = require('../config/auth');
 const ingredientsCtrl = require('../controllers/ingredients')
 
 // GET '/' page to explore all content
-router.get('/', isLoggedIn, ingredientsCtrl.index);
+router.get('/', ingredientsCtrl.index);
 
 module.exports = router;

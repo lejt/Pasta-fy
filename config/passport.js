@@ -33,7 +33,7 @@ passport.use(
 );
 
 passport.serializeUser(function(user, cb) {
-cb(null, user._id);
+  cb(null, user._id);
 });
 
 passport.deserializeUser(function(userId, cb) {
