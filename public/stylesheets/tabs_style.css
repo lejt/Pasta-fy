@@ -7,11 +7,10 @@
 #main_content li {
  display:inline;
  list-style-type:none;
- padding:10px;
+ padding: 12px 50px;
  border-radius:5px 5px 0px 0px;
  font-weight:bold;
  cursor:pointer;
- /* box-shadow: 5px 10px rgba(0,0,0,0.5); */
 }
 #main_content li.notselected {
  background-color:#692d0a;
@@ -21,6 +20,7 @@
  background-color:#aa3c11;
  color:#d37f12;	
  overflow: auto;
+ 
 }
 #main_content .hidden_desc {
  display: none;
