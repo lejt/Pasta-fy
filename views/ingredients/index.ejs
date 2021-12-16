@@ -24,10 +24,6 @@
   </nav>
 <br>
 
-EXPLORE PAGE HERE
-
-4 categories with all data and product summary
-
 
 <div id="main_content">
 
@@ -37,31 +33,51 @@ EXPLORE PAGE HERE
     <li class="notselected" id="page4" onclick="change_tab(this.id);">Proteins</li>
     
     <div class='hidden_desc' id="page1_desc">
-     <h2>Page 1</h2>
-     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <h2>Page 1</h2>
+        <% pastas.forEach(p=>{ %>
+            <%= p.name %>
+            <button class="btn btn-danger" type='submit'></button>
+            <br>
+        <% }) %>
     </div>
    
     <div class='hidden_desc' id="page2_desc">
      <h2>Page 2</h2>
-     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <% sauces.forEach(s=>{ %>
+            <%= s.name %>
+            <button class="btn btn-danger" type='submit'></button>
+            <br>
+        <% }) %>
     </div>
     
     <div class='hidden_desc' id="page3_desc">
      <h2>Page 3</h2>
-     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <% veges.forEach(v=>{ %>
+            <%= v.name %>
+            <button class="btn btn-danger" type='submit'></button>
+            <br>
+        <% }) %>
     </div>
 
     <div class='hidden_desc' id="page4_desc">
      <h2>Page 4</h2>
-     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <% proteins.forEach(p=>{ %>
+            <%= p.name %>
+            <button class="btn btn-danger" type='submit'></button>
+            <br>
+        <% }) %>
     </div>
     
     <div id="page_content">
      <h2>Page 1</h2>
-     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
+        <% pastas.forEach(p=>{ %>
+            <%= p.name %>
+            <button class="btn btn-danger" type='submit'></button>
+            <br>
+        <% }) %>
     </div>
     
 </div>
-
+<br> 
 
 <%- include('../partials/footer') %>

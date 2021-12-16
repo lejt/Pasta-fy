@@ -1,4 +1,4 @@
-exports.pasta = [
+exports.pastas = [
     {name: "Angel Hair (Capellini)", length: "long"},
     {name: "Bow Tie (Farfalle)", length: "short"},
     {name: "Bucatini", length: "long"},
@@ -27,7 +27,7 @@ exports.pasta = [
     {name: "Ziti", length: "short"},
 ];
 
-exports.sauce = [
+exports.sauces = [
     {name: "Marinara", base: "tomato"},
     {name: "Alfredo", base: "cream cheese, whipping cream"},
     {name: "Bolognese", base: "tomato"},
@@ -46,7 +46,16 @@ exports.sauce = [
     {name: "Arrabbiata", base: "tomato"},
 ];
 
-exports.protein = [
+exports.veges = [
+    {name: "Broccoli"},
+    {name: "Spinach"},
+    {name: "Onion"},
+    {name: "Garlic"},
+    {name: "Basil"},
+    {name: "Mushroom"},
+];
+
+exports.proteins = [
     {name: "Guanciale (salt-cured pork jowl)", animal: "pork"},
     {name: "Pancetta (Italian bacon)", animal: "pork"},
     {name: "Italian sausage", animal: "pork"},
@@ -56,6 +65,3 @@ exports.protein = [
     {name: "Oxtail", animal: "beef"},
 ];
 
-exports.vege = [
-    {name: ""},
-];

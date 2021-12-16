@@ -7,6 +7,16 @@ module.exports = {
     index,
 }
 
-async function index(req, res) {
-    res.render("ingredients/index");
+function index(req, res) {
+    Pasta.find({}, (err, pastas)=> {
+        Sauce.find({}, (err, sauces)=> {
+            Vege.find({}, (err, veges)=> {
+                Protein.find({}, (err, proteins)=> {
+                    res.render('ingredients/index', { pastas, sauces, veges, proteins });
+                })
+            })
+        })
+    })
+
+    // res.render("ingredients/index");
 }

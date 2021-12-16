@@ -6,4 +6,6 @@ const ingredientsCtrl = require('../controllers/ingredients')
 // GET '/' page to explore all content
 router.get('/', ingredientsCtrl.index);
 
+
+
 module.exports = router;
