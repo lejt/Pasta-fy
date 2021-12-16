@@ -6,6 +6,7 @@ const buildsCtrl = require('../controllers/builds');
 // GET '/' page to explore all content
 router.get('/builds', buildsCtrl.index);
 
-router.post('/ingredients/:id/builds', buildsCtrl.create);
+router.post('/ingredients/:id/pastas', buildsCtrl.createPasta);
+router.post('/ingredients/:id/sauces', buildsCtrl.createSauce);
 
 module.exports = router;

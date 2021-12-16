@@ -6,7 +6,8 @@ const Build = require('../models/build');
 
 module.exports = {
     index,
-    create,
+    createPasta,
+    createSauce,
 }
 
 function index(req, res) {
@@ -15,10 +16,12 @@ function index(req, res) {
     //     res.render('builds/index', {build});
     // })
 
-    Build.find({}).populate('pasta').exec(function (err, builds) {
-        Pasta.find({_id: builds.pasta}, function(err, pasta) {
-            res.render('builds/index', {builds, pasta})
-        })
+    Build.find({}).populate('pasta').populate('sauce').exec(function (err, builds) {
+        // Pasta.find({_id: builds.pasta}, function(err, pasta) {
+            // Sauce.find({_id: builds.sauce}, function(err, sauce) {
+                res.render('builds/index', {builds})
+            // })
+        // })
     })
     // Pasta.find({}, (err, pastas)=> {
     //     Sauce.find({}, (err, sauces)=> {
@@ -33,37 +36,27 @@ function index(req, res) {
     // })
 };
 
-function create(req, res) {
+function createPasta(req, res) {
     Pasta.findById(req.params.id, (err, pasta)=> {
         // req.body.user = req.user._id;
         req.body.pasta = req.params.id;
-        // console.log(req.body);
-        // Build.find({}, function(err, build) {
-            // console.log(build);
-            // res.redirect('/builds/index');
-        // })
-        // console.log(req.body);
-        // Build.create(req.body, function(err, build) {
-            // console.log(build);
-            // res.redirect('/baskets/index');
-        // })
 
         const build = new Build(req.body);
         build.save(function (err) {
             // console.log(build)
-            res.redirect('/builds');
+            res.redirect('/ingredients');
         })
+    })
+}
+function createSauce(req, res) {
+    Sauce.findById(req.params.id, (err, sauce)=> {
+        // req.body.user = req.user._id;
+        req.body.sauce = req.params.id;
 
-
-
-        // res.render('baskets/index', { pasta });
-        // Sauce.find({}, (err, sauces)=> {
-        //     Vege.find({}, (err, veges)=> {
-        //         Protein.find({}, (err, proteins)=> {
-        //             Build.create(req.body)
-        //             res.render('baskets/index', { pastas, sauces, veges, proteins });
-        //         })
-        //     })
-        // })
+        const build = new Build(req.body);
+        build.save(function (err) {
+            // console.log(build)
+            res.redirect('/ingredients');
+        })
     })
 }

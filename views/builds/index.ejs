@@ -32,6 +32,9 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 <!--  if (user && user._id.equals(r.user)) {  -->
   <!-- }  -->
   <% builds.forEach(b=> { %>
-    <%= b.pasta.name %>
+    <%= b.pasta %>
+    <%= b.sauce %>
   <% }) %>
+
+
 <%- include('../partials/footer') %>
