@@ -18,6 +18,8 @@ const buildSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Protein'
     },
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
 }, {timestamps: true});
 
 module.exports = mongoose.model('Build', buildSchema);

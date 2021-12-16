@@ -16,7 +16,7 @@
     <a href="/ingredients">Explore</a>
     <% if (user) { %>
       <a href="/products">Products</a>
-      <a href="/basket">Basket</a>
+      <a href="/builds">Basket</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
@@ -36,7 +36,9 @@
         <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
             <%= p.name %>
-            <button class="btn btn-danger" type='submit'></button>
+            <form action="/ingredients/<%= p._id %>/builds" method="POST">
+                <button class="btn btn-danger" type='submit'>Add to Basket</button>
+            </form>
             <br>
         <% }) %>
     </div>

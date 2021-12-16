@@ -14,11 +14,24 @@
     <a href="/ingredients">Explore</a>
     <% if (user) { %>
       <a href="/products">Products</a>
-      <a href="/builds">Basket</a>
+      <a href="/baskets">Basket</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
 <br>
-  
+
+<br>
+<br>
+<br>
+<br>
+LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
+<br>
+
+<!--  if (user && user._id.equals(r.user)) {  -->
+  <!-- }  -->
+  <% builds.forEach(b=> { %>
+    <%= b.pasta.name %>
+  <% }) %>
+<%- include('../partials/footer') %>
