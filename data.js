@@ -26,3 +26,22 @@ exports.pasta = [
     {name: "Vermicelli", length: "long"},
     {name: "Ziti", length: "short"},
 ];
+
+exports.sauce = [
+    {name: "Marinara", base: "tomato"},
+    {name: "Alfredo", base: "cream cheese, whipping cream"},
+    {name: "Bolognese", base: "tomato"},
+    {name: "Amatriciana", base: "tomato"},
+    {name: "Roasted Tomato", base: "tomato"},
+    {name: "Frutti di mare", base: "tomato, white wine, clam juice"},
+    {name: "Salsa di Noci (Walnut)", base: "milk"},
+    {name: "Pesto", base: "basil, olive oil"},
+    {name: "Pomodoro", base: "tomato"},
+    {name: "Bechamel", base: "milk"},
+    {name: "Truffle Cream", base: "butter, olive oil"},
+    {name: "Umbrian Ragu", base: "tomato, red wine"},
+    {name: "Carbonara", base: "egg, cream"},
+    {name: "Vodka", base: "tomato, cream, vodka"},
+    {name: "Puttanesca", base: "tomato"},
+    {name: "Arrabbiata", base: "tomato"},
+];
