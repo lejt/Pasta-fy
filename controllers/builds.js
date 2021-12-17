@@ -3,11 +3,11 @@ const Sauce = require('../models/sauce');
 const Vege = require('../models/vege');
 const Protein = require('../models/protein');
 const Build = require('../models/build');
+const Meal = require('../models/meal');
 
 module.exports = {
     index,
-    // createPasta,
-    // createSauce,
+    addPasta,
 }
 
 function index(req, res) {
@@ -42,4 +42,21 @@ function index(req, res) {
             // })
         })
 };
-//  pastas, sauces, veges, proteins
+
+function addPasta(req, res) {
+    Build.findOne({user: req.user._id}, function(err, build) {
+        Pasta.find({_id: req.params.id}, function(err, pasta) {
+            
+            console.log(req.params.id);
+            console.log(pasta);
+            req.body.name = pasta;
+
+            Meal.create(req.body, function(err, meals) {
+                console.log('meal: ', meals);
+                res.redirect('/builds');
+            })
+            
+            // res.render('builds/index', {pasta});
+        })
+    })
+};

@@ -35,7 +35,7 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 <hr>
 <div class="textBg">
   <% build.pasta.forEach(bp=> { %>
-    <form action="" method="">
+    <form action="/builds/<%= bp._id %>/meal" method="POST">
       <%= bp.name %>
       <button class="btn btn-danger" type="submit">+</button>
     </form>
@@ -65,6 +65,11 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
     </form>
   <% }) %>
 </div><br>
+
+<div class="textBg">
+
+
+</div>
 
   <!-- <div id="storeSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)">
 
