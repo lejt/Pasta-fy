@@ -7,6 +7,7 @@ const Meal = require('../models/meal');
 
 module.exports = {
     index,
+    show,
     createPasta,
     createSauce,
     createVege,
@@ -30,6 +31,24 @@ function index(req, res) {
         })
     })
 };
+
+function show(req, res) {
+    
+    // open show page based on what was clicked
+    // tests req.params.id in all categories and will only output the category that contains it
+    Pasta.findById(req.params.id, (err, pasta)=> {
+        Sauce.findById(req.params.id, (err, sauce)=> {
+            Vege.findById(req.params.id, (err, vege)=> {
+                Protein.findById(req.params.id, (err, protein)=> {
+                    Meal.findById(req.params.id, (err, meal)=> {
+                        res.render('ingredients/show', {pasta, sauce, vege, protein, meal})
+                    })
+                })
+            })
+        })
+    })
+}
+
 
 function createPasta(req, res) {
     // req.user._id is whoever is signed in 

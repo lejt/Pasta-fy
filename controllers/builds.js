@@ -48,6 +48,8 @@ function combine(req, res) {
     req.body.ingredients = []
     req.body.ingredients.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
     req.body.name = req.body.mealName;
+    console.log(req.body.pasta.innerHTML)
+
 
     // deletes the items off list if used to generate a meal 
     Build.findOne({user: req.user._id}, function(err, build) {

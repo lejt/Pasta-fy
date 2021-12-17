@@ -6,6 +6,9 @@ const ingredientsCtrl = require('../controllers/ingredients')
 // GET '/' page to explore all content
 router.get('/ingredients', ingredientsCtrl.index);
 
+// GET '/ingredients/:id' page for details of item
+router.get('/ingredients/:id', ingredientsCtrl.show);
+
 // POST '/ingredients/:id/food' page that adds food to build page
 router.post('/ingredients/:id/pastas', ingredientsCtrl.createPasta);
 router.post('/ingredients/:id/sauces', ingredientsCtrl.createSauce);

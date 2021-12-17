@@ -92,24 +92,28 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 
       <label>Pasta</label>
         <select name="pasta">
+          <option value=""></option>
           <% build.pasta.forEach(bp=> { %>
             <option value="<%= bp._id %>"><%= bp.name %></option>
           <% }) %>
         </select><br>
       <label>Sauce</label>
         <select name="sauce">
+          <option value=""></option>
           <% build.sauce.forEach(bs=> { %>
             <option value="<%= bs._id %>"><%= bs.name %></option>
           <% }) %>
         </select><br>
       <label>Vegetable</label>
         <select name="vege">
+          <option value=""></option>
           <% build.vege.forEach(bv=> { %>
             <option value="<%= bv._id %>"><%= bv.name %></option>
           <% }) %>
         </select><br>
       <label>Protein</label>
         <select name="protein">
+          <option value=""></option>
           <% build.protein.forEach(bp=> { %>
             <option value="<%= bp._id %>"><%= bp.name %></option>
           <% }) %>
