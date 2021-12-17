@@ -1,7 +1,7 @@
 exports.meals = [
-    {name: "Spaghetti & Meatballs"},
-    {name: "Pasta alla Carbonara"},
-    {name: "Basil Pesto"},
+    {name: "Spaghetti & Meatballs", ingredients: ["spaghetti", "meatballs"]},
+    {name: "Pasta alla Carbonara", ingredients: ["spaghetti", "pancetta", "garlic", "olive oil"]},
+    {name: "Basil Pesto", ingredients: ["penne", "basil", "pesto"]},
 ];
 
 exports.pastas = [

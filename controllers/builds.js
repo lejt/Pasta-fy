@@ -7,7 +7,6 @@ const Meal = require('../models/meal');
 
 module.exports = {
     index,
-    addPasta,
     combine,
 }
 
@@ -44,28 +43,30 @@ function index(req, res) {
         })
 };
 
-function addPasta(req, res) {
-    Build.findOne({user: req.user._id}, function(err, build) {
-        Pasta.find({_id: req.params.id}, function(err, pasta) {
-            
-            console.log(req.params.id);
-            console.log(pasta);
-            req.body.name = pasta;
-
-            Meal.create(req.body, function(err, meals) {
-                console.log('meal: ', meals);
-                res.redirect('/builds');
-            })
-            
-            // res.render('builds/index', {pasta});
-        })
-    })
-};
 
 function combine(req, res) {
-//     Build.findOne({user: req.user._id}, function(err, build) {
-//         Pasta.find({_id: build.pasta}, function(err, pasta))
+    req.body.ingredients = []
+    req.body.ingredients.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
+    req.body.name = req.body.mealName;
 
-//                     Meal.name.push(pasta.name + Sauce.name + Vege.name + Protein.name);
+    // deletes the items off list if used to generate a meal 
+    Build.findOne({user: req.user._id}, function(err, build) {
+        const deleteIdxPasta = build.pasta.findIndex(p=> p._id == req.body.pasta);
+        const deleteIdxSauce = build.sauce.findIndex(p=> p._id == req.body.sauce);
+        const deleteIdxVege = build.vege.findIndex(p=> p._id == req.body.vege);
+        const deleteIdxProtein = build.protein.findIndex(p=> p._id == req.body.protein);
+        build.pasta.splice(deleteIdxPasta, 1);
+        build.sauce.splice(deleteIdxSauce, 1);
+        build.vege.splice(deleteIdxVege, 1);
+        build.protein.splice(deleteIdxProtein, 1);
+        
+        build.save(function(err) {
+            if (err) console.log(err);
+            
+            Meal.create(req.body, function(err, meal) {
+                console.log(meal)
+                res.redirect('/builds');
+            })
+        })
+    })
 }
-
