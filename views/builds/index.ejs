@@ -53,4 +53,19 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
   <br>
 <% }) %>
 
+<% build.sauce.forEach(bs=> { %>
+  <%= bs.name %> 
+  <br>
+<% }) %>
+
+<% build.vege.forEach(bv=> { %>
+  <%= bv.name %> 
+  <br>
+<% }) %>
+
+<% build.protein.forEach(bp=> { %>
+  <%= bp.name %> 
+  <br>
+<% }) %>
+
 <%- include('../partials/footer') %>
