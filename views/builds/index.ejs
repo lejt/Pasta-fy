@@ -14,7 +14,7 @@
     <a href="/ingredients">Explore</a>
     <% if (user) { %>
       <a href="/products">Products</a>
-      <a href="/baskets">Basket</a>
+      <a href="/builds">Build</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
@@ -29,8 +29,28 @@
 LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 <br>
 
+<!-- <% pastas.forEach(p=> { %>
+  <%= p.name %>
+  <br>
+<% }) %>
+<% sauces.forEach(s=> { %>
+  <%= s.name %>
+  <br>
+<% }) %>
+<% veges.forEach(v=> { %>
+  <%= v.name %>
+  <br>
+<% }) %>
+<% proteins.forEach(p=> { %>
+  <%= p.name %>
+  <br>
+<% }) %> -->
 
+<hr>
 
-
+<% build.pasta.forEach(bp=> { %>
+  <%= bp.name %> 
+  <br>
+<% }) %>
 
 <%- include('../partials/footer') %>

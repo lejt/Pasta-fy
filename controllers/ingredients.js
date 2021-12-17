@@ -7,6 +7,10 @@ const Build = require('../models/build');
 module.exports = {
     index,
     createPasta,
+    createSauce,
+    createVege,
+    createProtein,
+
 }
 
 function index(req, res) {
@@ -29,7 +33,34 @@ function createPasta(req, res) {
     Build.findOne({user: req.user._id}, function(err, build) {
         build.pasta.push(req.params.id)
         build.save(function(err) {
-            res.redirect('/builds');
+            res.redirect('/ingredients');
         })
     })
-}
+};
+function createSauce(req, res) {
+
+    Build.findOne({user: req.user._id}, function(err, build) {
+        build.sauce.push(req.params.id)
+        build.save(function(err) {
+            res.redirect('/ingredients');
+        })
+    })
+};
+function createVege(req, res) {
+
+    Build.findOne({user: req.user._id}, function(err, build) {
+        build.vege.push(req.params.id)
+        build.save(function(err) {
+            res.redirect('/ingredients');
+        })
+    })
+};
+function createProtein(req, res) {
+
+    Build.findOne({user: req.user._id}, function(err, build) {
+        build.protein.push(req.params.id)
+        build.save(function(err) {
+            res.redirect('/ingredients');
+        })
+    })
+};

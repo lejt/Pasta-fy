@@ -16,7 +16,7 @@
     <a href="/ingredients">Explore</a>
     <% if (user) { %>
       <a href="/products">Products</a>
-      <a href="/builds">Basket</a>
+      <a href="/builds">Build</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
@@ -36,8 +36,8 @@
         <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
             <%= p.name %>
-            <form action="/ingredients/<%= p._id %>" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Basket</button>
+            <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+                <button class="btn btn-danger" type='submit'>Add to Build</button>
             </form>
             <br>
         <% }) %>
@@ -48,7 +48,7 @@
         <% sauces.forEach(s=>{ %>
             <%= s.name %>
             <form action="/ingredients/<%= s._id %>/sauces" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Basket</button>
+                <button class="btn btn-danger" type='submit'>Add to Build</button>
             </form>
             <br>
         <% }) %>
@@ -58,7 +58,9 @@
      <h2>Page 3</h2>
         <% veges.forEach(v=>{ %>
             <%= v.name %>
-            <button class="btn btn-danger" type='submit'></button>
+            <form action="/ingredients/<%= v._id %>/veges" method="POST">
+                <button class="btn btn-danger" type='submit'>Add to Basket</button>
+            </form>
             <br>
         <% }) %>
     </div>
@@ -67,7 +69,9 @@
      <h2>Page 4</h2>
         <% proteins.forEach(p=>{ %>
             <%= p.name %>
-            <button class="btn btn-danger" type='submit'></button>
+            <form action="/ingredients/<%= p._id %>/proteins" method="POST">
+                <button class="btn btn-danger" type='submit'>Add to Build</button>
+            </form>
             <br>
         <% }) %>
     </div>
@@ -77,7 +81,7 @@
         <% pastas.forEach(p=>{ %>
             <%= p.name %>
             <form action="/ingredients/<%= p._id %>" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Basket</button>
+                <button class="btn btn-danger" type='submit'>Add to Build</button>
             </form>
             <br>
         <% }) %>
