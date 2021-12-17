@@ -18,6 +18,12 @@ const reviewSchema = new Schema({
 const mealSchema = new Schema({
     name: String,
     ingredients: [{type: String}],
+    desc: String,
+    img: {
+        data: Buffer,
+        contentType: String
+    },
+    recipe: String,
     review: [reviewSchema],
 }, {
     timestamps: true

@@ -9,12 +9,12 @@ history,
 how to make recipe,
 recommended recipes
 <br>
-<hr>
 <% if (pasta) { %>
     pasta details here
 <% } %>
 <% if (sauce) { %>
-    sauce details here
+    <h1 class="display-1"><%= sauce.name %></h1><hr><br>
+    Brief history: <br> <%= sauce.desc %>
 <% } %>
 <% if (vege) { %>
     vege details here
@@ -23,7 +23,10 @@ recommended recipes
     protein details here
 <% } %>
 <% if (meal) { %>
-    meal details here
+    <h1 class="display-1"><%= meal.name %></h1><hr><br>
+    Main Ingredients: <%= meal.ingredients %><br>
+    Brief history: <%= meal.desc %>
+
 <% } %>
 
 <%- include('../partials/footer') %>

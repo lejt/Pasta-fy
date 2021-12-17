@@ -1,7 +1,10 @@
 exports.meals = [
-    {name: "Spaghetti & Meatballs", ingredients: ["spaghetti", "meatballs"]},
-    {name: "Pasta alla Carbonara", ingredients: ["spaghetti", "pancetta", "garlic", "olive oil"]},
-    {name: "Basil Pesto", ingredients: ["penne", "basil", "pesto"]},
+    {name: "Spaghetti & Meatballs", ingredients: ["spaghetti", "meatballs"], 
+    desc: ``},
+    {name: "Pasta alla Carbonara", ingredients: ["spaghetti", "pancetta", "garlic", "olive oil"],
+    desc: ``},
+    {name: "Basil Pesto", ingredients: ["penne", "basil", "pesto"],
+    desc: ``},
 ];
 
 exports.pastas = [
@@ -41,15 +44,19 @@ exports.sauces = [
     {name: "Roasted Tomato", base: "tomato"},
     {name: "Frutti di mare", base: "tomato, white wine, clam juice"},
     {name: "Salsa di Noci (Walnut)", base: "milk"},
-    {name: "Pesto", base: "basil, olive oil"},
+    {name: "Pesto", base: "basil, olive oil",
+    desc: `Pesto is a sauce originating in Genoa in the Liguria region of northern Italy, and from the time the Italians invented pesto it has always been prepared with crushed garlic, basil, and European pine nuts blended with olive oil, Parmigiano Reggiano cheese, and including Fiore Sardo, a cheese made from sheep’s milk.`},
     {name: "Pomodoro", base: "tomato"},
     {name: "Bechamel", base: "milk"},
     {name: "Truffle Cream", base: "butter, olive oil"},
     {name: "Umbrian Ragu", base: "tomato, red wine"},
-    {name: "Carbonara", base: "egg, cream"},
-    {name: "Vodka", base: "tomato, cream, vodka"},
+    {name: "Carbonara", base: "egg, cream", 
+    desc: `Carbonara is most associated with Rome and the Lazio region, but as with so many Italian dishes, in Italy, its origin provokes much speculation and debate. Some connect it to pasta cacio e uova, a Neapolitan dish of pasta tossed with melted lard, beaten raw eggs, and cheese, as documented in Ippolito Cavalcanti's 1839 Neapolitan cookbook. Because the name comes from the word carbonaro, “coal burner,” some believe the dish was created as a hearty easy-to-make meal by men working outdoors for long periods. Others trace it to the Allied liberation of Rome in 1944, with American GIs bringing their daily ration of eggs and bacon to local restaurants to add to the limited Italian menu. Supporting this story is the first written reference to the dish in newspaper La Stampa in 1950, describing it as a dish prized by American servicemen. Shortly after, carbonara also appears in Elizabeth Davids classic 1954 book Italian Food.`},
+    {name: "Vodka", base: "tomato, cream, vodka",
+    desc: `Like most Italian recipes and sauces, there’s a measure of debate as to where and when it was first established. Unsurprisingly, the two places that lay claim to the invention of vodka sauce are New York City and Italy. We’ll start stateside, with Orsini Restaurant in New York, where it is believed that Chef Luigi Franzese invented, specifically, penne alla vodka, in the 1970s. The second New York-based claim comes from food historians, who posit that the dish was actually invented by James Doty, a Columbia University graduate, who created the dish in the 1980s. As for the Italian origin of the sauce, two separate stories deliver different sides as to who first concocted the creamy sauce in the old world in the 1970s. First, in The Ultimate Pasta Cookbook, author Pasquale Bruno Jr. says vodka sauce was first conjured at a restaurant called Dante in Bologna. But, yet another cookbook, Williams-Sonoma Essentials of Italian, says it was created by a Roman chef who worked for a vodka company and wanted to popularize the spirit in the country.`},
     {name: "Puttanesca", base: "tomato"},
-    {name: "Arrabbiata", base: "tomato"},
+    {name: "Arrabbiata", base: "tomato",
+    desc: `According to the tradition, the arrabbiata sauce was born in the early twentieth century in a Roman trattoria whose host wanted to offer its customers an alternative to amatriciana. So, he left tomato and pecorino, added garlic and removed the bacon, replacing the bucatini with the penne and considerably increased the amount of chilli. We do not know if this is really the history of the arrabbiata but the origin is certainly Roman. Federico Fellini immortalized it in his film Roma, in 1972, together with the rigatoni with the pataja (the intestine of the dairy calf), the carbonara and the snails with mint and chilli. He also appeared in the films La Grande Abbuffata (The Great Binge) by Marco Ferreri of 1973 and in the play Sette chili in sette giorni (Seven pounds in seven days) by Luca Verdone in 1986, with Renato Pozzetto and Carlo Verdone.`},
 ];
 
 exports.veges = [

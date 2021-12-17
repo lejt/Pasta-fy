@@ -22,19 +22,19 @@ Promise.all([p1, p2, p3, p4, p5])
     console.log(results);
     return Pasta.create(data.pastas);
 }).then(function(pastas) {
-    console.log(pastas);
+    // console.log(pastas);
     return Sauce.create(data.sauces);
 }).then(function(sauces) {
-    console.log(sauces);
+    // console.log(sauces);
     return Vege.create(data.veges);
 }).then(function(veges) {
-    console.log(veges);
+    // console.log(veges);
     return Protein.create(data.proteins);
 }).then(function(proteins) {
-    console.log(proteins);
+    // console.log(proteins);
     return Meal.create(data.meals);
 }).then(function(meals) {
-    console.log(meals);
+    // console.log(meals);
 }).then(function() {
     process.exit();
 })
