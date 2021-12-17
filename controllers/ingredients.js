@@ -10,7 +10,10 @@ module.exports = {
     createSauce,
     createVege,
     createProtein,
-
+    deleteSelectedPasta,
+    deleteSelectedSauce,
+    deleteSelectedVege,
+    deleteSelectedProtein,
 }
 
 function index(req, res) {
@@ -25,7 +28,7 @@ function index(req, res) {
     })
 };
 
-
+;
 function createPasta(req, res) {
     // req.user._id is whoever is signed in 
     Build.findOne({user: req.user._id}, function(err, build) {
@@ -59,3 +62,61 @@ function createProtein(req, res) {
         })
     })
 };
+
+function deleteSelectedPasta(req, res) {
+    Build.findOne({user: req.user._id}, function(err, build) {
+        console.log(build.pasta);
+        const deleteIdx = build.pasta.findIndex(p=> p._id == req.params.id);
+        build.pasta.splice(deleteIdx, 1);
+        
+        build.save(function(err) {
+            if (err) console.log(err);
+            console.log(build.pasta);
+            res.redirect('/builds');
+        })
+
+        // you can use this instead of function(err) cb above
+        // build.save().then(function() {
+        //     res.redirect('/builds');
+        // })
+    })
+}
+
+function deleteSelectedSauce(req, res) {
+    Build.findOne({user: req.user._id}, function(err, build) {
+        const deleteIdx = build.sauce.findIndex(s=> s._id == req.params.id);
+        build.sauce.splice(deleteIdx, 1);
+        
+        build.save(function(err) {
+            if (err) console.log(err);
+            console.log(build.sauce);
+            res.redirect('/builds');
+        })
+    })
+}
+
+function deleteSelectedVege(req, res) {
+    Build.findOne({user: req.user._id}, function(err, build) {
+        const deleteIdx = build.vege.findIndex(v=> v._id == req.params.id);
+        build.vege.splice(deleteIdx, 1);
+        
+        build.save(function(err) {
+            if (err) console.log(err);
+            console.log(build.vege);
+            res.redirect('/builds');
+        })
+    })
+}
+
+function deleteSelectedProtein(req, res) {
+    Build.findOne({user: req.user._id}, function(err, build) {
+        const deleteIdx = build.protein.findIndex(p=> p._id == req.params.id);
+        build.protein.splice(deleteIdx, 1);
+        
+        build.save(function(err) {
+            if (err) console.log(err);
+            console.log(build.protein);
+            res.redirect('/builds');
+        })
+    })
+}

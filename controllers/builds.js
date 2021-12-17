@@ -8,6 +8,7 @@ const Meal = require('../models/meal');
 module.exports = {
     index,
     addPasta,
+    combine,
 }
 
 function index(req, res) {
@@ -60,3 +61,11 @@ function addPasta(req, res) {
         })
     })
 };
+
+function combine(req, res) {
+//     Build.findOne({user: req.user._id}, function(err, build) {
+//         Pasta.find({_id: build.pasta}, function(err, pasta))
+
+//                     Meal.name.push(pasta.name + Sauce.name + Vege.name + Protein.name);
+}
+

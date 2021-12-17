@@ -40,12 +40,26 @@ a {
   border-radius: 5px;
 } */
 
-.textBg {
+.textBgBuild {
   background-color: azure;
-  width: 30%;
-  /* height: 50vh;
-  overflow: auto; */
+  width: 40vw;
+  height: 100px;
+  overflow: auto;
 }
+.textBgCombine {
+  background-color: beige;
+  width: 40vw;
+  height: 400px;
+}
+
+.deleteBtn {
+
+
+}
+.deleteBtn 
+
+
+
 
 /* The Modal (background) */
 .modal {

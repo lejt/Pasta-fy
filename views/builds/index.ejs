@@ -30,46 +30,100 @@
 LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 <br>
 
-
-
 <hr>
-<div class="textBg">
-  <% build.pasta.forEach(bp=> { %>
-    <form action="/builds/<%= bp._id %>/meal" method="POST">
-      <%= bp.name %>
-      <button class="btn btn-danger" type="submit">+</button>
+
+<div class="d-flex justify-content-between">
+
+  <div class="selected-container">
+
+    <div class="textBgBuild">
+      <% build.pasta.forEach(bp=> { %>
+        <div class="d-flex justify-content-between">
+          <%= bp.name %>
+          <form action="/pasta/<%= bp._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+          </form>
+        </div><br>
+      <% }) %>
+    </div><br>
+
+    <!-- POP UP FORM FOR ADDING CUSTOM PASTA -->
+    <!-- https://www.w3schools.com/howto/howto_css_modals.asp -->
+    <!-- https://www.w3schools.com/howto/howto_js_popup_form.asp -->
+
+    <div class="textBgBuild">
+      <% build.sauce.forEach(bs=> { %>
+        <div class="d-flex justify-content-between">
+          <%= bs.name %>
+          <form action="/sauce/<%= bs._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+          </form>
+        </div><br>
+      <% }) %>
+    </div><br>
+
+    <div class="textBgBuild">
+      <% build.vege.forEach(bv=> { %>
+        <div class="d-flex justify-content-between">
+          <%= bv.name %>
+          <form action="/vege/<%= bv._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+          </form>
+        </div><br>
+      <% }) %>
+    </div><br>
+
+    <div class="textBgBuild">
+      <% build.protein.forEach(bp=> { %>
+        <div class="d-flex justify-content-between">
+          <%= bp.name %>
+          <form action="/protein/<%= bp._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+          </form>
+        </div><br>
+      <% }) %>
+    </div>
+
+  </div>
+    
+  <div class="textBgCombine combine-container">
+    <h5>Combine into a complete meal!</h5>
+    <form action="" method="POST">
+      <label>Pasta</label>
+        <select name="pasta">
+          <% build.pasta.forEach(bp=> { %>
+            <option value="<%= bp._id %>"><%= bp.name %></option>
+          <% }) %>
+        </select><br>
+      <label>Sauce</label>
+        <select name="sauce">
+          <% build.sauce.forEach(bs=> { %>
+            <option value="<%= bs._id %>"><%= bs.name %></option>
+          <% }) %>
+        </select><br>
+        <label>Vegetable</label>
+          <select name="vege">
+            <% build.vege.forEach(bv=> { %>
+              <option value="<%= bv._id %>"><%= bv.name %></option>
+            <% }) %>
+          </select><br>
+        <label>Protein</label>
+          <select name="protein">
+            <% build.protein.forEach(bp=> { %>
+              <option value="<%= bp._id %>"><%= bp.name %></option>
+            <% }) %>
+          </select><br>
+
+      <button class="btn btn-primary" type="submit">Cook!</button>
+
     </form>
-  <% }) %>
-</div><br>
-<!-- POP UP FORM FOR ADDING CUSTOM PASTA -->
-<!-- https://www.w3schools.com/howto/howto_css_modals.asp -->
-<!-- https://www.w3schools.com/howto/howto_js_popup_form.asp -->
-<div class="textBg">
-  <% build.sauce.forEach(bs=> { %>
-    <form action="" method="">
-      <%= bs.name %>
-      <button class="btn btn-danger" type="submit">+</button>
-    </form>
-  <% }) %>
-</div><br>
-<div class="textBg">
-  <% build.vege.forEach(bv=> { %>
-    <form action="" method="">
-    <%= bv.name %>
-      <button class="btn btn-danger" type="submit">+</button>
-    </form>
-  <% }) %>
-</div><br>
-<div class="textBg">
-  <% build.protein.forEach(bp=> { %>
-    <form action="" method="">
-      <%= bp.name %>
-      <button class="btn btn-danger" type="submit">+</button>
-    </form>
-  <% }) %>
-</div><br>
+  </div>
+
+</div>
 
 
+
+<!-- HAVE A WINDOW OF DROPDOWN THAT INCLUDE EVERYTHING IN LEFT COLUMN, ONE FOR EACH CATEGORY -->
 
   <!-- <div id="storeSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)">
 
@@ -98,6 +152,6 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 
   <div id="buildSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
 
-</div>
+<!-- </div> -->
 
 <%- include('../partials/footer') %>
