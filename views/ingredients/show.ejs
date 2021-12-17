@@ -22,10 +22,35 @@ recommended recipes
 <% if (protein) { %>
     protein details here
 <% } %>
+
 <% if (meal) { %>
     <h1 class="display-1"><%= meal.name %></h1><hr><br>
     Main Ingredients: <%= meal.ingredients %><br>
-    Brief history: <%= meal.desc %>
+    Meal description: WOO WEEEEE, is that delicious. <br><br>
+
+    <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
+        <label>Write a Review:</label><br>
+        <textarea name="content"></textarea><br>
+        <label>Rating:</label>
+        <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <input type="submit" value="Add Review">
+    </form>
+    <br>
+
+    <h4>Reviews</h4> <hr>
+    <% if (meal.reviews.length) { %>
+
+        
+    <% } else { %>
+    <h5>No Reviews Yet</h5>
+    <% } %>
+
 
 <% } %>
 
