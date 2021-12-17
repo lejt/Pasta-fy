@@ -7,6 +7,7 @@ const Pasta = require('./models/pasta');
 const Sauce = require('./models/sauce');
 const Vege = require('./models/vege');
 const Protein = require('./models/protein');
+const Meal = require('./models/meal');
 // require the data
 const data = require('./data');
 
@@ -14,8 +15,9 @@ const p1 = Pasta.deleteMany({});
 const p2 = Sauce.deleteMany({});
 const p3 = Vege.deleteMany({});
 const p4 = Protein.deleteMany({});
+const p5 = Meal.deleteMany({});
 
-Promise.all([p1, p2, p3, p4])
+Promise.all([p1, p2, p3, p4, p5])
 .then(function(results) {
     console.log(results);
     return Pasta.create(data.pastas);
@@ -30,6 +32,9 @@ Promise.all([p1, p2, p3, p4])
     return Protein.create(data.proteins);
 }).then(function(proteins) {
     console.log(proteins);
+    return Meal.create(data.meals);
+}).then(function(meals) {
+    console.log(meals);
 }).then(function() {
     process.exit();
 })

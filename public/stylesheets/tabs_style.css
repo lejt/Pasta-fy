@@ -7,7 +7,10 @@
 #main_content li {
     display:inline;
     list-style-type:none;
-    padding: 12px 50px;
+    padding-top: 12px;             
+    padding-bottom: 12px;
+    padding-right: 5vw;             /* <--- adjust size of tab */
+    padding-left: 5vw;
     border-radius:5px 5px 0px 0px;
     font-weight:bold;
     cursor:pointer;
@@ -26,7 +29,7 @@
 }
 #main_content #page_content {
     background-color:#aa3c11;
-    padding: 30px;
+    padding: 30px;              
     margin-top: 9px;
     border-radius:0px 5px 5px 5px;
     box-shadow: 5px 10px rgba(0,0,0,0.5);

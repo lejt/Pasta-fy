@@ -31,6 +31,7 @@
     <li class="notselected" id="page2" onclick="change_tab(this.id);">Sauce</li>
     <li class="notselected" id="page3" onclick="change_tab(this.id);">Vegetables</li>
     <li class="notselected" id="page4" onclick="change_tab(this.id);">Proteins</li>
+    <li class="notselected" id="page5" onclick="change_tab(this.id);">Meals</li>
     
     <div class='hidden_desc' id="page1_desc">
         <h2>Page 1</h2>
@@ -72,6 +73,14 @@
             <form action="/ingredients/<%= p._id %>/proteins" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Build</button>
             </form>
+            <br>
+        <% }) %>
+    </div>
+
+    <div class='hidden_desc' id="page5_desc">
+     <h2>Page 5</h2>
+        <% meals.forEach(m=>{ %>
+            <%= m.name %>
             <br>
         <% }) %>
     </div>

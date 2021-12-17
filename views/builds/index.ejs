@@ -101,19 +101,22 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
             <option value="<%= bs._id %>"><%= bs.name %></option>
           <% }) %>
         </select><br>
-        <label>Vegetable</label>
-          <select name="vege">
-            <% build.vege.forEach(bv=> { %>
-              <option value="<%= bv._id %>"><%= bv.name %></option>
-            <% }) %>
-          </select><br>
-        <label>Protein</label>
-          <select name="protein">
-            <% build.protein.forEach(bp=> { %>
-              <option value="<%= bp._id %>"><%= bp.name %></option>
-            <% }) %>
-          </select><br>
+      <label>Vegetable</label>
+        <select name="vege">
+          <% build.vege.forEach(bv=> { %>
+            <option value="<%= bv._id %>"><%= bv.name %></option>
+          <% }) %>
+        </select><br>
+      <label>Protein</label>
+        <select name="protein">
+          <% build.protein.forEach(bp=> { %>
+            <option value="<%= bp._id %>"><%= bp.name %></option>
+          <% }) %>
+        </select><br><br>
 
+      <label>Name your dish!</label><br>
+      <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta">
+      <br><br>
       <button class="btn btn-primary" type="submit">Cook!</button>
 
     </form>

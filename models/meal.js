@@ -16,9 +16,7 @@ const reviewSchema = new Schema({
     timestamps: true
 });
 const mealSchema = new Schema({
-    name: {
-        type: String
-    },
+    name: [{ type: String }],
     review: [reviewSchema],
 }, {
     timestamps: true

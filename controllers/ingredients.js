@@ -3,6 +3,7 @@ const Sauce = require('../models/sauce');
 const Vege = require('../models/vege');
 const Protein = require('../models/protein');
 const Build = require('../models/build');
+const Meal = require('../models/meal');
 
 module.exports = {
     index,
@@ -21,7 +22,9 @@ function index(req, res) {
         Sauce.find({}, (err, sauces)=> {
             Vege.find({}, (err, veges)=> {
                 Protein.find({}, (err, proteins)=> {
-                    res.render('ingredients/index', { pastas, sauces, veges, proteins });
+                    Meal.find({}, (err, meals)=> {
+                        res.render('ingredients/index', { pastas, sauces, veges, proteins, meals });
+                    })
                 })
             })
         })
