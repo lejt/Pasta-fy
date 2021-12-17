@@ -26,9 +26,7 @@ function index(req, res) {
 };
 
 
-
 function createPasta(req, res) {
-
     // req.user._id is whoever is signed in 
     Build.findOne({user: req.user._id}, function(err, build) {
         build.pasta.push(req.params.id)
@@ -38,7 +36,6 @@ function createPasta(req, res) {
     })
 };
 function createSauce(req, res) {
-
     Build.findOne({user: req.user._id}, function(err, build) {
         build.sauce.push(req.params.id)
         build.save(function(err) {
@@ -47,7 +44,6 @@ function createSauce(req, res) {
     })
 };
 function createVege(req, res) {
-
     Build.findOne({user: req.user._id}, function(err, build) {
         build.vege.push(req.params.id)
         build.save(function(err) {
@@ -56,7 +52,6 @@ function createVege(req, res) {
     })
 };
 function createProtein(req, res) {
-
     Build.findOne({user: req.user._id}, function(err, build) {
         build.protein.push(req.params.id)
         build.save(function(err) {
