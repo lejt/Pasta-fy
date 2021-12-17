@@ -7,6 +7,9 @@ const ingredientsCtrl = require('../controllers/ingredients')
 router.get('/ingredients', ingredientsCtrl.index);
 
 router.post('/ingredients/:id', ingredientsCtrl.createPasta);
-// router.post('/builds/:id/sauces', buildsCtrl.createSauce);
+// router.post('/ingredients/:id', ingredientsCtrl.createSauce);
+// router.post('/ingredients/:id', ingredientsCtrl.createVege);
+// router.post('/ingredients/:id', ingredientsCtrl.createProtein);
+
 
 module.exports = router;

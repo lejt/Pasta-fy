@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const buildSchema = new Schema({
-    buildID: {type: String},
     pasta: [{
         type: Schema.Types.ObjectId,
         ref: 'Pasta'
@@ -21,6 +20,7 @@ const buildSchema = new Schema({
     }],
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
+    
 }, {timestamps: true});
 
 module.exports = mongoose.model('Build', buildSchema);

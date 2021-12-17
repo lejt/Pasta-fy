@@ -21,12 +21,10 @@ passport.use(
           avatar: profile.photos[0].value
         });
         // create build here, assign user id property
-        build = await Build.create({
-          buildID: profile.id,
-          pasta: 'P',
-          sauce: 'S',
-          vege: 'V',
-          protein: 'M',
+        await Build.create({
+          user: user._id,
+          userName: user.name,
+
         });
 
         return cb(null, user);

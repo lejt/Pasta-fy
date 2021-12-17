@@ -8,10 +8,5 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-// router.get('/', moviesCtrl.index);
-// // Use isLoggedIn middleware to protect routes
-// router.get('/new', isLoggedIn, moviesCtrl.new);
-// router.get('/:id', moviesCtrl.show);
-// router.post('/', isLoggedIn, moviesCtrl.create);
 
 module.exports = router;

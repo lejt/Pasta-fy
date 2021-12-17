@@ -21,13 +21,15 @@ function index(req, res) {
     })
 };
 
+
+
 function createPasta(req, res) {
-    Pasta.findById(req.params.id, (err, pasta)=> {
-        // req.body.user = req.user._id;
-        req.body.pasta = pasta 
 
-        build.pasta.push(req.body);
-
-
+    // req.user._id is whoever is signed in 
+    Build.findOne({user: req.user._id}, function(err, build) {
+        build.pasta.push(req.params.id)
+        build.save(function(err) {
+            res.redirect('/builds');
+        })
     })
 }
