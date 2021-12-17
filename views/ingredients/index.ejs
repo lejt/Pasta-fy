@@ -15,7 +15,7 @@
     <a class="navbar-brand" id="pastafyLogo" href="/"><img src="/assets/images/pastafyLogo3.png"><span class="navbar-brand">Pasta-fy</span></a>
     <a href="/ingredients">Explore</a>
     <% if (user) { %>
-      <a href="/products">Products</a>
+      <a href="#">Products</a>
       <a href="/builds">Build</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
@@ -80,7 +80,7 @@
      <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
             <%= p.name %>
-            <form action="/ingredients/<%= p._id %>" method="POST">
+            <form action="/ingredients/<%= p._id %>/pastas" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Build</button>
             </form>
             <br>

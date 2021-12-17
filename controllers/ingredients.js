@@ -28,7 +28,6 @@ function index(req, res) {
     })
 };
 
-;
 function createPasta(req, res) {
     // req.user._id is whoever is signed in 
     Build.findOne({user: req.user._id}, function(err, build) {
