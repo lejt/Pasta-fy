@@ -24,19 +24,25 @@ a {
 .login img {
   height: 30px;
 }
-.buildPage {
+
+
+/* .buildPage {
   display: flex;
   justify-content: center;
-}
+} */
 
-#storeSpace, #buildSpace {
+/* #storeSpace, #buildSpace {
   background-color: rgb(228, 235, 219);
   width: 250px;
   height: 50vh;
   padding: 10px;
   overflow: auto;
   border-radius: 5px;
-}
+} */
 
-#dragEl {
+.textBg {
+  background-color: azure;
+  width: 30%;
+  /* height: 50vh;
+  overflow: auto; */
 }

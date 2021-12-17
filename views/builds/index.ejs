@@ -33,34 +33,65 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 
 
 <hr>
-<div class="buildPage">
+<div class="textBg">
+  <% build.pasta.forEach(bp=> { %>
+    <form action="" method="">
+      <%= bp.name %>
+      <button class="btn btn-danger" type="submit">+</button>
+    </form>
+  <% }) %>
+</div><br>
+<div class="textBg">
+  <% build.sauce.forEach(bs=> { %>
+    <form action="" method="">
+      <%= bs.name %>
+      <button class="btn btn-danger" type="submit">+</button>
+    </form>
+  <% }) %>
+</div><br>
+<div class="textBg">
+  <% build.vege.forEach(bv=> { %>
+    <form action="" method="">
+    <%= bv.name %>
+      <button class="btn btn-danger" type="submit">+</button>
+    </form>
+  <% }) %>
+</div><br>
+<div class="textBg">
+  <% build.protein.forEach(bp=> { %>
+    <form action="" method="">
+      <%= bp.name %>
+      <button class="btn btn-danger" type="submit">+</button>
+    </form>
+  <% }) %>
+</div><br>
 
-  <div id="storeSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <!-- <div id="storeSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)">
 
       <% build.pasta.forEach(bp=> { %>
         <div id="drag1" draggable="true" ondragstart="drag(event)"><%= bp.name %></div>
       <% }) %>
       
       <% build.sauce.forEach(bs=> { %>
-        <!-- <%= bs.name %>  -->
+        <%= bs.name %> 
         <div id="drag2" draggable="true" ondragstart="drag(event)"><%= bs.name %></div>
         <br>
       <% }) %>
     
       <% build.vege.forEach(bv=> { %>
-        <!-- <%= bv.name %>  -->
+        <%= bv.name %> 
         <div id="drag3" draggable="true" ondragstart="drag(event)"><%= bv.name %></div>
         <br>
       <% }) %>
       
       <% build.protein.forEach(bp=> { %>
-        <!-- <%= bp.name %>  -->
+        <%= bp.name %> 
         <div id="drag4" draggable="true" ondragstart="drag(event)"><%= bp.name %></div>
         <br>
       <% }) %>
   </div>
 
-  <div id="buildSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="buildSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
 
 </div>
 
