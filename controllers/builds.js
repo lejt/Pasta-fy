@@ -46,10 +46,31 @@ function index(req, res) {
 
 function combine(req, res) {
     req.body.ingredients = []
-    req.body.ingredients.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
-    req.body.name = req.body.mealName;
-    console.log(req.body.pasta.innerHTML)
+    req.body.ingredients2 = []
+    req.body.vegetables = []
 
+    // req.body.protein = []
+    //method one
+    req.body.ingredients.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
+    //method two
+    req.body.ingredients2.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
+    //method three
+    // req.body.pasta = req.body.pasta;
+    // req.body.sauce = req.body.sauce;
+    // req.body.vege = req.body.vege;
+    // req.body.protein = req.body.protein;
+
+    //method four
+    // will have to forEach vegetables and push it onto req.body.vege if integrated
+    // req.body.vegetables = req.body.vegetables
+    // console.log(req.body.vegetables);
+    // req.body.vegesss.forEach(v=> {
+    //     req.body.vegetables.push(v)
+    // })
+    req.body.vegetables = req.body.vegesss
+
+
+    req.body.name = req.body.mealName;
 
     // deletes the items off list if used to generate a meal 
     Build.findOne({user: req.user._id}, function(err, build) {

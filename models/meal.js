@@ -18,6 +18,17 @@ const reviewSchema = new Schema({
 const mealSchema = new Schema({
     name: String,
     ingredients: [{type: String}],
+    ingredients2: [{type: Schema.Types.ObjectId, ref: 'Pasta'},
+    {type: Schema.Types.ObjectId, ref: 'Sauce'},
+    {type: Schema.Types.ObjectId, ref: 'Vege'},
+    {type: Schema.Types.ObjectId, ref: 'Protein'},
+    ],
+    pasta: {type: Schema.Types.ObjectId, ref: 'Pasta'},
+    sauce: {type: Schema.Types.ObjectId, ref: 'Sauce'},
+    vege: {type: Schema.Types.ObjectId, ref: 'Vege'},
+    protein: {type: Schema.Types.ObjectId, ref: 'Protein'},
+
+    vegetables: [{type: Schema.Types.ObjectId, ref: 'Vege'}],
     desc: String,
     img: {
         data: Buffer,

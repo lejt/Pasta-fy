@@ -41,12 +41,32 @@ function show(req, res) {
             Vege.findById(req.params.id, (err, vege)=> {
                 Protein.findById(req.params.id, (err, protein)=> {
                     Meal.findById(req.params.id, (err, meal)=> {
-                        res.render('ingredients/show', {pasta, sauce, vege, protein, meal})
+                        if (pasta || sauce || vege || protein) {
+                            console.log('first option printed');
+                            res.render('ingredients/show', {pasta, sauce, vege, protein, meal})
+                        } else {
+                            console.log('second option printed');
+                            Meal.findById(req.params.id)
+                            //method two
+                            // .populate('ingredients2')
+                            //method three
+                            .populate('pasta')
+                            .populate('sauce')
+                            .populate('vege')
+                            .populate('protein')
+                            .populate('vegetables')
+
+                            .exec(function(err, meal) {
+                                res.render('ingredients/show', {meal, pasta, sauce, vege, protein})
+                            })
+                        }
                     })
                 })
             })
         })
     })
+
+
 }
 
 

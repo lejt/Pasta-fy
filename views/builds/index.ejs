@@ -34,6 +34,7 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 
 <div class="d-flex justify-content-between">
 
+  <!-- LISTS ALL SELECTED INGREDIENTS ON LEFT OF PAGE -->
   <div class="selected-container">
 
     <div class="textBgBuild">
@@ -85,7 +86,8 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
     </div>
 
   </div>
-    
+
+  <!-- SHOW INGREDIENTS READY TO COMBINE ON RIGHT OF PAGE -->
   <div class="textBgCombine combine-container">
     <h5>Combine into a complete meal!</h5>
     <form action="/builds" method="POST">
@@ -111,6 +113,12 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
             <option value="<%= bv._id %>"><%= bv.name %></option>
           <% }) %>
         </select><br>
+        <!-- MULTIPLE VEGE OPTION -->
+
+        <% build.vege.forEach(bv=> { %>
+          <input type="checkbox" value="<%= bv.id %>" name="vegesss"><%= bv.name %><br>
+        <% }) %><br>
+
       <label>Protein</label>
         <select name="protein">
           <option value=""></option>
