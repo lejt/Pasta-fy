@@ -48,7 +48,35 @@
                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
                 </form>
-            <% } %><br>
+
+                <!-- Trigger/Open The Modal -->
+                <button id="myBtn">Edit Review</button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Update your review here!</p>
+                    <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                        <textarea name="content" placeholder="<%= r.content%>"></textarea><br>
+                        <label>Rating:</label>
+                        <select name="rating">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+
+                </div>
+                
+            <% } %>
+
 
         <% }) %>
     <% } else { %>

@@ -26,7 +26,6 @@ function create(req, res) {
             res.redirect(`/ingredients/${req.params.id}`);
         })
     })
-
 }
 
 function deleteReview(req, res) {
@@ -46,5 +45,20 @@ function deleteReview(req, res) {
 }
 
 function updateReview(req, res) {
+    console.log('UPDATE HERE');
+    //replace old content with new content, replace review, replace date, same name
+    
+    Meal.findOne({"reviews._id": req.params.id}, (err, meal)=> {
+        const review = meal.reviews.id(req.params.id);
+        if (!review.user.equals(req.user._id)) return res.redirect(`/ingredients/${meal._id}`);
 
+        review.content = req.body.content;
+        review.rating = req.body.rating;
+        meal.save(function(err) {
+            if (err) console.log(err);
+            res.redirect(`/ingredients/${meal._id}`)
+        })
+    })
+
+  
 }

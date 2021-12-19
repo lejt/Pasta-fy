@@ -24,7 +24,6 @@ passport.use(
         await Build.create({
           user: user._id,
           userName: user.name,
-
         });
 
         return cb(null, user);
