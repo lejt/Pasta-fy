@@ -28,20 +28,28 @@
 <br><br><br><br><br>
 
 <% if (pasta) { %>
-    <h1 class="display-1"><%= pasta.name %></h1><hr><br>
-    <img src="<%= pasta.img %>"> Brief history: <br> <%= pasta.desc %>
+    <div class="ingredientDetail">
+        <h1 class="display-1"><%= pasta.name %></h1><hr><br>
+        <img src="<%= pasta.img %>"> Brief history: <br> <%= pasta.desc %>
+    </div>
 <% } %>
 <% if (sauce) { %>
-    <h1 class="display-1"><%= sauce.name %></h1><hr><br>
-    <img src="<%= sauce.img %>"> Brief history: <br> <%= sauce.desc %>
+    <div class="ingredientDetail">
+        <h1 class="display-1"><%= sauce.name %></h1><hr><br>
+        <img src="<%= sauce.img %>"> Brief history: <br> <%= sauce.desc %>
+    </div>
 <% } %>
 <% if (vege) { %>
-    <h1 class="display-1"><%= vege.name %></h1><hr><br>
-    <img src="<%= vege.img %>"> Brief history: <br> <%= vege.desc %>
+    <div class="ingredientDetail">
+        <h1 class="display-1"><%= vege.name %></h1><hr><br>
+        <img src="<%= vege.img %>"> Brief history: <br> <%= vege.desc %>
+    </div>
 <% } %>
 <% if (protein) { %>
-    <h1 class="display-1"><%= protein.name %></h1><hr><br>
-    <img src="<%= protein.img %>"> Brief history: <br> <%= protein.desc %>
+    <div class="ingredientDetail">
+        <h1 class="display-1"><%= protein.name %></h1><hr><br>
+        <img src="<%= protein.img %>"> Brief history: <br> <%= protein.desc %>
+    </div>
 <% } %>
 
 <% if (meal) { %>
@@ -50,22 +58,19 @@
     <!-- include aggregate rating -->
     <hr>
 
-    <!-- Meal Information -->
-    
-
-    <strong>Main Ingredients: </strong><%= meal.pasta.name %> , <%= meal.sauce.name %> 
+    <strong>Main Ingredients: </strong> <%= meal.pasta.name %> , <%= meal.sauce.name %> 
     <% meal.vege.forEach(v=> { %> 
     , <%= v.name %>
     <% }) %>
     <% meal.protein.forEach(p=> { %> 
     , <%= p.name %>
     <% }) %>
-    <br>
+    <br><br>
     
     <strong>Meal description/recipe:</strong><br>
 
     <!-- Add Review -->
-    <button id="addReviewBtn" class="btn btn-primary" type="submit">Add Review</button>
+    <!-- <button id="addReviewBtn" class="btn btn-primary" type="submit">Add Review</button> -->
     <div class="reviewBox">
         <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
             <span class="star-rating">
@@ -123,8 +128,8 @@
                             <div>
                                 <%= r.createdAt.toLocaleDateString() %>
                             </div>
-                        </div><hr>
-                    </div>
+                        </div>
+                    </div><hr>
 
                     <!-- The Modal -->
                     <div id="myModal" class="modal">

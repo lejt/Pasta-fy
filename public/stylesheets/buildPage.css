@@ -1,0 +1,17 @@
+/* Build Page */
+.textBgBuild {
+    background-color: rgb(167, 133, 70);
+    width: 45vw;
+    height: 100px;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+.textBgCombine {
+    background-color: beige;
+    width: 45vw;
+    height: 65vh;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -4,6 +4,7 @@ body {
   min-height: 100vh;
   min-width: 98vw;
   position: relative;
+  padding-bottom: 100px;
 }
 /* Nav */
 .navbar {
@@ -91,19 +92,7 @@ main img {
 pasta.img, sauce.img, vege.img, protein.img {
   height: 100px;
 } 
-/* Build Page */
-.textBgBuild {
-  background-color: azure;
-  width: 40vw;
-  height: 100px;
-  overflow: auto;
-}
-.textBgCombine {
-  background-color: beige;
-  width: 40vw;
-  height: 400px;
-  overflow: auto;
-}
+
 /* Reviews - add Review*/
 .reviewBox {
   border: 1px dotted black;
@@ -130,10 +119,12 @@ pasta.img, sauce.img, vege.img, protein.img {
   border-radius: 50px;
   height: 30px;
   position: absolute;
+  left: 0;
 }
 /* Individual reviews */
 .reviewBg {
   margin: 0 5%;
+  padding: 0 0 0 20px;
   position: relative;
   overflow-wrap: break-word;
   overflow-y: auto;
