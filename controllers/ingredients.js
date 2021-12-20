@@ -71,8 +71,12 @@ function show(req, res) {
 
 
 function createPasta(req, res) {
+
     // req.user._id is whoever is signed in 
     Build.findOne({user: req.user._id}, function(err, build) {
+        if (!build.pasta) {
+            build.pasta = [];
+        }
         build.pasta.push(req.params.id)
         build.save(function(err) {
             res.redirect('/ingredients');

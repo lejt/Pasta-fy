@@ -50,6 +50,7 @@ a {
   background-color: beige;
   width: 40vw;
   height: 400px;
+  overflow: auto;
 }
 
 

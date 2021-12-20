@@ -45,42 +45,39 @@ function index(req, res) {
 
 
 function combine(req, res) {
-    // req.body.ingredients = []
-    // req.body.ingredients2 = []
-    // req.body.vege = []
-
-    // req.body.protein = []
-    //method one
-    // req.body.ingredients.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
-    //method two
-    // req.body.ingredients2.push(req.body.pasta, req.body.sauce, req.body.vege, req.body.protein);
-    //method three
-    // req.body.pasta = req.body.pasta;
-    // req.body.sauce = req.body.sauce;
-    // req.body.vege = req.body.vege;
-    // req.body.protein = req.body.protein;
-
-    //method four
-    // will have to forEach vegetables and push it onto req.body.vege if integrated
-    // req.body.vegetables = req.body.vegetables
-    // console.log(req.body.vegetables);
-    // req.body.vegesss.forEach(v=> {
-    //     req.body.vegetables.push(v)
-    // })
-    // req.body.vege = req.body.vege;
-
     req.body.name = req.body.mealName;
+
 
     // deletes the items off list if used to generate a meal 
     Build.findOne({user: req.user._id}, function(err, build) {
+
+        // find idx and delete them off build list if used in combine
         const deleteIdxPasta = build.pasta.findIndex(p=> p._id == req.body.pasta);
-        const deleteIdxSauce = build.sauce.findIndex(p=> p._id == req.body.sauce);
-        // const deleteIdxVege = build.vege.findIndex(p=> p._id == req.body.vege);
-        const deleteIdxProtein = build.protein.findIndex(p=> p._id == req.body.protein);
+        const deleteIdxSauce = build.sauce.findIndex(s=> s._id == req.body.sauce);
+
+        buildVegeArrId = build.vege.map(v=> v._id);
+        buildProteinArrId = build.vege.map(p=> p._id);
+        
+        selectedVegeArrId = req.body.vege.map(v => v);
+        selectedProteinArrId = req.body.vege.map(p => p);
+    
+        for (let i=0; i<buildVegeArrId.length; i++) {
+            for (let j=0; j<selectedVegeArrId.length; j++) {
+                if (buildVegeArrId[i] == selectedVegeArrId[j]) {
+                    build.vege.splice(i, 1);
+                }
+            }
+        };
+        for (let i=0; i<buildProteinArrId.length; i++) {
+            for (let j=0; j<selectedProteinArrId.length; j++) {
+                if (buildProteinArrId[i] == selectedProteinArrId[j]) {
+                    build.protein.splice(i, 1);
+                }
+            }
+        };
+    
         build.pasta.splice(deleteIdxPasta, 1);
         build.sauce.splice(deleteIdxSauce, 1);
-        // build.vege.splice(deleteIdxVege, 1);
-        build.protein.splice(deleteIdxProtein, 1);
         
         build.save(function(err) {
             if (err) console.log(err);

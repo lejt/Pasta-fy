@@ -38,14 +38,20 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
   <div class="selected-container">
 
     <div class="textBgBuild">
-      <% build.pasta.forEach(bp=> { %>
-        <div class="d-flex justify-content-between">
-          <%= bp.name %>
-          <form action="/pasta/<%= bp._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
-          </form>
-        </div><br>
-      <% }) %>
+      <% if (build) { %>
+
+        <% build.pasta.forEach(bp=> { %>
+          <div class="d-flex justify-content-between">
+            <%= bp.name %>
+            <form action="/pasta/<%= bp._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+            </form>
+          </div><br>
+        <% }) %>
+
+      <% } %>
+
+      
     </div><br>
 
     <!-- POP UP FORM FOR ADDING CUSTOM PASTA -->
@@ -53,124 +59,98 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
     <!-- https://www.w3schools.com/howto/howto_js_popup_form.asp -->
 
     <div class="textBgBuild">
-      <% build.sauce.forEach(bs=> { %>
-        <div class="d-flex justify-content-between">
-          <%= bs.name %>
-          <form action="/sauce/<%= bs._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
-          </form>
-        </div><br>
-      <% }) %>
+      <% if (build) { %>
+        <% build.sauce.forEach(bs=> { %>
+          <div class="d-flex justify-content-between">
+            <%= bs.name %>
+            <form action="/sauce/<%= bs._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+            </form>
+          </div><br>
+        <% }) %>
+      <% } %>
     </div><br>
 
     <div class="textBgBuild">
-      <% build.vege.forEach(bv=> { %>
-        <div class="d-flex justify-content-between">
-          <%= bv.name %>
-          <form action="/vege/<%= bv._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
-          </form>
-        </div><br>
-      <% }) %>
+      <% if (build) { %>
+        <% build.vege.forEach(bv=> { %>
+          <div class="d-flex justify-content-between">
+            <%= bv.name %>
+            <form action="/vege/<%= bv._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+            </form>
+          </div><br>
+        <% }) %>
+      <% } %>
     </div><br>
 
     <div class="textBgBuild">
-      <% build.protein.forEach(bp=> { %>
-        <div class="d-flex justify-content-between">
-          <%= bp.name %>
-          <form action="/protein/<%= bp._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
-          </form>
-        </div><br>
-      <% }) %>
+      <% if (build) { %>
+        <% build.protein.forEach(bp=> { %>
+          <div class="d-flex justify-content-between">
+            <%= bp.name %>
+            <form action="/protein/<%= bp._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm deleteBtn" type="submit">X</button>
+            </form>
+          </div><br>
+        <% }) %>
+      <% } %>
     </div>
-
   </div>
 
   <!-- SHOW INGREDIENTS READY TO COMBINE ON RIGHT OF PAGE -->
   <div class="textBgCombine combine-container">
-    <h5>Combine into a complete meal!</h5>
-    <form action="/builds" method="POST">
-
-      <label>Pasta</label>
-        <select name="pasta">
-          <% build.pasta.forEach(bp=> { %>
-            <option value="<%= bp._id %>"><%= bp.name %></option>
-          <% }) %>
-        </select><br>
-      <label>Sauce</label>
-        <select name="sauce">
-          <% build.sauce.forEach(bs=> { %>
-            <option value="<%= bs._id %>"><%= bs.name %></option>
-          <% }) %>
-        </select><br>
-      <label>Vegetable</label><br>
-        <!-- <select name="vege">
-          <option value=""></option>
+    <% if (build) { %>
+      <h5>Combine into a complete meal!</h5>
+      <form action="/builds" method="POST">
+  
+        <label>Pasta</label>
+          <select name="pasta">
+            <% build.pasta.forEach(bp=> { %>
+              <option value="<%= bp._id %>"><%= bp.name %></option>
+            <% }) %>
+          </select><br>
+        <label>Sauce</label>
+          <select name="sauce">
+            <% build.sauce.forEach(bs=> { %>
+              <option value="<%= bs._id %>"><%= bs.name %></option>
+            <% }) %>
+          </select><br>
+        <label>Vegetable</label><br>
+          <!-- <select name="vege">
+            <option value=""></option>
+            <% build.vege.forEach(bv=> { %>
+              <option value="<%= bv._id %>"><%= bv.name %></option>
+            <% }) %>
+          </select><br> -->
+  
+          <!-- MULTIPLE VEGE OPTION -->
           <% build.vege.forEach(bv=> { %>
-            <option value="<%= bv._id %>"><%= bv.name %></option>
-          <% }) %>
-        </select><br> -->
-
-        <!-- MULTIPLE VEGE OPTION -->
-        <% build.vege.forEach(bv=> { %>
-          <input type="checkbox" value="<%= bv.id %>" name="vege"><%= bv.name %><br>
-        <% }) %><br>
-
-      <label>Protein</label>
-        <!-- <select name="protein">
-          <option value=""></option>
+            <input type="checkbox" value="<%= bv.id %>" name="vege"><%= bv.name %><br>
+          <% }) %><br>
+  
+        <label>Protein</label>
+          <!-- <select name="protein">
+            <option value=""></option>
+            <% build.protein.forEach(bp=> { %>
+              <option value="<%= bp._id %>"><%= bp.name %></option>
+            <% }) %>
+          </select><br><br> -->
+          
+          <!-- MULTIPLE VEGE OPTION -->
           <% build.protein.forEach(bp=> { %>
-            <option value="<%= bp._id %>"><%= bp.name %></option>
-          <% }) %>
-        </select><br><br> -->
-        
-        <!-- MULTIPLE VEGE OPTION -->
-        <% build.protein.forEach(bp=> { %>
-          <input type="checkbox" value="<%= bp.id %>" name="protein"><%= bp.name %><br>
-        <% }) %><br>
-
-      <label>Name your dish!</label><br>
-      <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta">
-      <br><br>
-      <button class="btn btn-primary" type="submit">Cook!</button>
-
-    </form>
+            <input type="checkbox" value="<%= bp.id %>" name="protein"><%= bp.name %><br>
+          <% }) %><br>
+  
+        <label>Name your dish!</label><br>
+        <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta">
+        <br><br>
+        <button class="btn btn-primary" type="submit">Cook!</button>
+  
+      </form>
+    <% } %>
   </div>
 
 </div>
-
-
-
-<!-- HAVE A WINDOW OF DROPDOWN THAT INCLUDE EVERYTHING IN LEFT COLUMN, ONE FOR EACH CATEGORY -->
-
-  <!-- <div id="storeSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)">
-
-      <% build.pasta.forEach(bp=> { %>
-        <div id="drag1" draggable="true" ondragstart="drag(event)"><%= bp.name %></div>
-      <% }) %>
-      
-      <% build.sauce.forEach(bs=> { %>
-        <%= bs.name %> 
-        <div id="drag2" draggable="true" ondragstart="drag(event)"><%= bs.name %></div>
-        <br>
-      <% }) %>
-    
-      <% build.vege.forEach(bv=> { %>
-        <%= bv.name %> 
-        <div id="drag3" draggable="true" ondragstart="drag(event)"><%= bv.name %></div>
-        <br>
-      <% }) %>
-      
-      <% build.protein.forEach(bp=> { %>
-        <%= bp.name %> 
-        <div id="drag4" draggable="true" ondragstart="drag(event)"><%= bp.name %></div>
-        <br>
-      <% }) %>
-  </div>
-
-  <div id="buildSpace" class="textBg" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
-
-<!-- </div> -->
 
 <%- include('../partials/footer') %>
