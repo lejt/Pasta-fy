@@ -80,8 +80,8 @@
     <div class='hidden_desc' id="page5_desc">
      <h2>Page 5</h2>
         <% meals.forEach(m=>{ %>
-            <a href="/ingredients/<%= m._id %>"><%= m.name %></a>
-                <!-- <%= m.ingredients %> -->
+            <a href="/ingredients/<%= m._id %>"><%= m.name %></a><br>
+            <!-- aggregate of all reviews -->
             <br>
         <% }) %>
     </div>

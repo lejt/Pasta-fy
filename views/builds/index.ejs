@@ -120,8 +120,7 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
           <% build.vege.forEach(bv=> { %>
             <input type="checkbox" value="<%= bv.id %>" name="vege"><%= bv.name %><br>
           <% }) %><br>
-  
-        <label>Protein</label>
+        <label>Protein</label><br>
           <% build.protein.forEach(bp=> { %>
             <input type="checkbox" value="<%= bp.id %>" name="protein"><%= bp.name %><br>
           <% }) %><br>

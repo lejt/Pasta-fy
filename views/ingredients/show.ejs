@@ -1,4 +1,29 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="/javascripts/popupForm_script.js"></script>
+  <title>Pasta-fy</title>
+</head>
+<body class="container">
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <a class="navbar-brand" id="pastafyLogo" href="/"><img src="/assets/images/pastafyLogo3.png"><span class="navbar-brand">Pasta-fy</span></a>
+    <a href="/ingredients">Explore</a>
+    <% if (user) { %>
+      <a href="#">Products</a>
+      <a href="/builds">Build</a>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
+  </nav>
+<br>
+  
 
 <br><br><br><br>
 
@@ -17,84 +42,127 @@
     protein details here
 <% } %>
 
-<% if (meal) { %>
-    <h1 class="display-1"><%= meal.name %></h1><hr><br>
 
-    <!-- Method three -->
-    Main Ingredients 3: 
+    <h1 class="display-1"><%= meal.name %></h1><br>
+    dish by: <%= meal.userName %>
+    <!-- include aggregate rating -->
+    <hr><br>
+
+    <!-- Meal Information -->
+    Main Ingredients: 
+
     <%= meal.pasta.name %> , <%= meal.sauce.name %> 
     <% meal.vege.forEach(v=> { %> 
     , <%= v.name %>
     <% }) %>
     <% meal.protein.forEach(p=> { %> 
     , <%= p.name %>
-    <% }) %><br>
-
-    Meal description/recipe: WOO WEEEEE, is that delicious. <br><br>
-
-    <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
-        <label>Write a Review:</label><br>
-        <textarea name="content"></textarea><br>
-        <label>Rating:</label>
-        <select name="rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <button class="btn btn-primary" type="submit">Add Review</button> 
-    </form>
+    <% }) %>
     <br>
 
-    <h4>Reviews</h4> <hr>
-    <% if (meal.reviews.length) { %>
-        <% meal.reviews.forEach(r=> { %>
-            <strong><%= r.rating %>/5</strong><br>
-            <%= r.content %><br>
-            <%= r.createdAt.toLocaleDateString() %><br>
+    Meal description/recipe:  <br><br>
 
-            <% if (user && user._id.equals(r.user)) { %>
-                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
+    <!-- Add Review -->
+    <button id="addReviewBtn" type="submit">Add Review</button>
+    <div class="reviewBox">
+        <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
+            <label>Write a Review:</label><br>
+            <textarea name="content"></textarea><br>
+            <label>Rating:</label><br>
+            <span class="star-rating">
+                <input type="radio" name="reviewRating" value="1"><i></i>
+                <input type="radio" name="reviewRating" value="2"><i></i>
+                <input type="radio" name="reviewRating" value="3"><i></i>
+                <input type="radio" name="reviewRating" value="4"><i></i>
+                <input type="radio" name="reviewRating" value="5"><i></i>
+            </span><br><br><br>
+            <button class="btn btn-primary" type="submit">Add Review</button> 
+        </form>
+    </div>
+    <br>
 
-                <!-- Trigger/Open The Modal -->
-                <button id="myBtn">Edit Review</button>
+        <h4>Reviews</h4> <hr>
+        <% if (meal.reviews.length) { %>
+                <% meal.reviews.forEach(r=> { %>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <% for (let i=0; i < 5; i++) { %>
+                                <% if (i < r.reviewRating ) { %>
+                                    <span class="fa fa-star checked"></span>
+                                <% } else { %>
+                                    <span class="fa fa-star"></span>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <% if (user && user._id.equals(r.user)) { %>
+                            <div class="d-flex">
+                                
+                                <div class="px-5">
+                                    <!-- Trigger/Open The Modal -->
+                                    <button id="myBtn" class="btn btn-secondary btn-sm">Edit</button>
+                                </div>
+                                <div>
+                                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-danger btn-sm">X</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
 
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
+                    <%= r.content %>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            - <%= r.userName %>
+                        </div>
+                        <div>
+                            <%= r.createdAt.toLocaleDateString() %>
+                        </div>
+                    </div><br><hr>
 
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Update your review here!</p>
-                    <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-                        <textarea name="content" placeholder="<%= r.content%>"></textarea><br>
-                        <label>Rating:</label>
-                        <select name="rating">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
 
-                </div>
-                
-            <% } %>
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Update your review here!</p>
+                            <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                                <textarea name="content" placeholder="<%= r.content %>"></textarea><br>
+                                <label>Rating:</label>
+                                <span class="star-rating">
+                                    <input type="radio" name="reviewRating" value="1"><i></i>
+                                    <input type="radio" name="reviewRating" value="2"><i></i>
+                                    <input type="radio" name="reviewRating" value="3"><i></i>
+                                    <input type="radio" name="reviewRating" value="4"><i></i>
+                                    <input type="radio" name="reviewRating" value="5"><i></i>
+                                </span>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- The Modal -->
+                    <div id="addReviewModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content2">
+                            <span class="close2">&times;</span>
+                            <p>Update your review here!</p>
+                        </div>
+                    </div>
+
+                <% }) %>
+
+        <% } else { %>
+            <h5>No Reviews Yet</h5>
+        <% } %>     
+
+        
 
 
-        <% }) %>
-    <% } else { %>
-        <h5>No Reviews Yet</h5>
-    <% } %>
 
 
 
-<% } %>
 
 <%- include('../partials/footer') %>

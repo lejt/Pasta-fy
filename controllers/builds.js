@@ -46,6 +46,7 @@ function index(req, res) {
 
 function combine(req, res) {
     req.body.name = req.body.mealName;
+    req.body.userName = req.user.name;
 
     // deletes the items off list if used to generate a meal 
     Build.findOne({user: req.user._id}, function(err, build) {

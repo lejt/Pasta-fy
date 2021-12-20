@@ -18,6 +18,7 @@ function create(req, res) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
+        // console.log(req.body.reviewRating) shows number 
 
         meal.reviews.push(req.body);
         meal.save(function(err) {
@@ -53,7 +54,8 @@ function updateReview(req, res) {
         if (!review.user.equals(req.user._id)) return res.redirect(`/ingredients/${meal._id}`);
 
         review.content = req.body.content;
-        review.rating = req.body.rating;
+        review.reviewRating = req.body.reviewRating;
+
         meal.save(function(err) {
             if (err) console.log(err);
             res.redirect(`/ingredients/${meal._id}`)

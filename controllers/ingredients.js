@@ -47,14 +47,10 @@ function show(req, res) {
                         } else {
                             console.log('second option printed');
                             Meal.findById(req.params.id)
-                            //method two
-                            // .populate('ingredients2')
-                            //method three
                             .populate('pasta')
                             .populate('sauce')
                             .populate('vege')
                             .populate('protein')
-                            // .populate('vegetables')
 
                             .exec(function(err, meal) {
                                 res.render('ingredients/show', {meal, pasta, sauce, vege, protein})

@@ -2,10 +2,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: linear-gradient(45deg, rgb(86, 121, 106), rgb(58, 77, 54));
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 98vw;
   position: relative;
 }
-
 a {
   color: #00B7FF;
 }
@@ -26,20 +25,6 @@ a {
 }
 
 
-/* .buildPage {
-  display: flex;
-  justify-content: center;
-} */
-
-/* #storeSpace, #buildSpace {
-  background-color: rgb(228, 235, 219);
-  width: 250px;
-  height: 50vh;
-  padding: 10px;
-  overflow: auto;
-  border-radius: 5px;
-} */
-
 .textBgBuild {
   background-color: azure;
   width: 40vw;
@@ -52,10 +37,95 @@ a {
   height: 400px;
   overflow: auto;
 }
+/* Reviews */
+.reviewBox {
+  /* text-align: center; */
+  border: 1px dotted black;
+  width: 60vw;
+}
+.reviewBox label {
+  /* margin-left: -400px; */
+}
+.reviewBox textarea {
+  width: 50vw;
+}
+.reviewBg {
+  background-color: beige;
+  height: auto;
+}
+/* Review stars */
+.star-rating {
+  margin: 25px 0 0px;
+ font-size: 0;
+ white-space: nowrap;
+ display: inline-block;
+ width: 175px;
+ height: 35px;
+ overflow: hidden;
+ position: relative;
+ background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+ background-size: contain;
+}
+.star-rating i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+}
+.star-rating input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+.star-rating input:hover + i,
+.star-rating input:checked + i {
+  opacity: 1;
+}
+.star-rating i ~ i {
+  width: 40%;
+}
+.star-rating i ~ i ~ i {
+  width: 60%;
+}
+.star-rating i ~ i ~ i ~ i {
+  width: 80%;
+}
+.star-rating i ~ i ~ i ~ i ~ i {
+  width: 100%;
+}
 
-
+.checked {
+  color: orange;
+}
+.testing {
+  border: 1px solid red;
+}
 /* The Modal (background) */
 .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal2 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -76,6 +146,13 @@ a {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
+.modal-content2 {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
 
 /* The Close Button */
 .close {
@@ -84,9 +161,20 @@ a {
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close2 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close2:hover,
+.close2:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;

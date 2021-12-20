@@ -1,12 +1,3 @@
-exports.meals = [
-    {name: "Spaghetti & Meatballs", ingredients: ["spaghetti", "meatballs"], 
-    desc: ``},
-    {name: "Pasta alla Carbonara", ingredients: ["spaghetti", "pancetta", "garlic", "olive oil"],
-    desc: ``},
-    {name: "Basil Pesto", ingredients: ["penne", "basil", "pesto"],
-    desc: ``},
-];
-
 exports.pastas = [
     {name: "Angel Hair (Capellini)", length: "long"},
     {name: "Bow Tie (Farfalle)", length: "short"},
