@@ -1,16 +1,15 @@
 
 #main_content {
-    margin: 100px auto 0;
-    /* width: 700px; */
-    width: 90vw;
+    margin: 150px auto 0;
+    max-width: 90vw;
 }
 #main_content li {
     display:inline;
     list-style-type:none;
     padding-top: 12px;             
     padding-bottom: 12px;
-    padding-right: 5vw;             /* <--- adjust size of tab */
-    padding-left: 5vw;
+    padding-right: 2vw;             /* <--- was 5vw adjust size of tab */
+    padding-left: 2vw;
     border-radius:5px 5px 0px 0px;
     font-weight:bold;
     cursor:pointer;
@@ -35,6 +34,10 @@
     box-shadow: 5px 10px rgba(0,0,0,0.5);
     line-height: 1.6em;
     word-spacing:4px;
-    height: 50vh;
+    height: 60vh;
     overflow: auto;
+}
+
+#main_content a {
+    color: black;
 }

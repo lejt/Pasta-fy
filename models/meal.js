@@ -24,7 +24,7 @@ const mealSchema = new Schema({
     },
     recipe: String,
     userName: String,
-    totalReviewRating: Number,
+    totalReviewRating: {type: Number, default: parseInt(0)},
     reviews: [reviewSchema],
 }, {
     timestamps: true

@@ -44,6 +44,8 @@
 
 
     <h1 class="display-1"><%= meal.name %></h1><br>
+    <% let total = 0 %>
+    <%= total %>
     dish by: <%= meal.userName %>
     <!-- include aggregate rating -->
     <hr><br>
@@ -59,66 +61,70 @@
     , <%= p.name %>
     <% }) %>
     <br>
-
+    
     Meal description/recipe:  <br><br>
 
     <!-- Add Review -->
-    <button id="addReviewBtn" type="submit">Add Review</button>
+    <button id="addReviewBtn" class="btn btn-primary" type="submit">Add Review</button>
     <div class="reviewBox">
         <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
-            <label>Write a Review:</label><br>
-            <textarea name="content"></textarea><br>
-            <label>Rating:</label><br>
             <span class="star-rating">
                 <input type="radio" name="reviewRating" value="1"><i></i>
                 <input type="radio" name="reviewRating" value="2"><i></i>
                 <input type="radio" name="reviewRating" value="3"><i></i>
                 <input type="radio" name="reviewRating" value="4"><i></i>
                 <input type="radio" name="reviewRating" value="5"><i></i>
-            </span><br><br><br>
-            <button class="btn btn-primary" type="submit">Add Review</button> 
+            </span><br>
+            <label>Write a Review:</label><br>
+            <textarea name="content"></textarea><br>
+            <button class="btn btn-primary" type="submit">Add Review</button>
         </form>
     </div>
     <br>
 
         <h4>Reviews</h4> <hr>
         <% if (meal.reviews.length) { %>
+            <div class="reviews-container">
                 <% meal.reviews.forEach(r=> { %>
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <% for (let i=0; i < 5; i++) { %>
-                                <% if (i < r.reviewRating ) { %>
-                                    <span class="fa fa-star checked"></span>
-                                <% } else { %>
-                                    <span class="fa fa-star"></span>
+                    <%= r.totalReview %>
+                    <img alt="avatar" src="<%= r.userAvatar %>">
+                    <div class="reviewBg">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <% for (let i=0; i < 5; i++) { %>
+                                    <% if (i < r.reviewRating ) { %>
+                                        <span class="fa fa-star checked"></span>
+                                    <% } else { %>
+                                        <span class="fa fa-star"></span>
+                                    <% } %>
                                 <% } %>
+                            </div>
+                            
+                            <% if (user && user._id.equals(r.user)) { %>
+                                <div class="d-flex">
+                                    
+                                    <div class="px-5">
+                                        <!-- Trigger/Open The Modal -->
+                                        <button id="myBtn" class="btn btn-secondary btn-sm">Edit</button>
+                                    </div>
+                                    <div>
+                                        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="btn btn-danger btn-sm">X</button>
+                                        </form>
+                                    </div>
+                                </div>
                             <% } %>
                         </div>
-                        <% if (user && user._id.equals(r.user)) { %>
-                            <div class="d-flex">
-                                
-                                <div class="px-5">
-                                    <!-- Trigger/Open The Modal -->
-                                    <button id="myBtn" class="btn btn-secondary btn-sm">Edit</button>
-                                </div>
-                                <div>
-                                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                                        <button type="submit" class="btn btn-danger btn-sm">X</button>
-                                    </form>
-                                </div>
+                        <%= r.content %>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                - <%= r.userName %>
                             </div>
-                        <% } %>
+                            <div>
+                                <%= r.createdAt.toLocaleDateString() %>
+                            </div>
+                        </div><hr>
                     </div>
-
-                    <%= r.content %>
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            - <%= r.userName %>
-                        </div>
-                        <div>
-                            <%= r.createdAt.toLocaleDateString() %>
-                        </div>
-                    </div><br><hr>
 
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
@@ -148,12 +154,25 @@
                         <!-- Modal content -->
                         <div class="modal-content2">
                             <span class="close2">&times;</span>
-                            <p>Update your review here!</p>
+                            <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
+                                <label>Write a Review:</label><br>
+                                <textarea name="content"></textarea><br>
+                                <label>Rating:</label><br>
+                                <span class="star-rating">
+                                    <input type="radio" name="reviewRating" value="1"><i></i>
+                                    <input type="radio" name="reviewRating" value="2"><i></i>
+                                    <input type="radio" name="reviewRating" value="3"><i></i>
+                                    <input type="radio" name="reviewRating" value="4"><i></i>
+                                    <input type="radio" name="reviewRating" value="5"><i></i>
+                                </span><br><br><br>
+                                <button class="btn btn-primary" type="submit">Add Review</button> 
+                            </form>
                         </div>
                     </div>
 
                 <% }) %>
-
+            </div>
+            
         <% } else { %>
             <h5>No Reviews Yet</h5>
         <% } %>     

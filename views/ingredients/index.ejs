@@ -11,19 +11,20 @@
   <title>Pasta-fy</title>
 </head>
 <body class="container">
-  <nav class="navbar navbar-light bg-light fixed-top">
-    <a class="navbar-brand" id="pastafyLogo" href="/"><img src="/assets/images/pastafyLogo3.png"><span class="navbar-brand">Pasta-fy</span></a>
-    <a href="/ingredients">Explore</a>
-    <% if (user) { %>
-      <a href="#">Products</a>
-      <a href="/builds">Build</a>
-      <a href="/logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>
-  </nav>
-<br>
-
+    <nav class="navbar fixed-top">
+      <a class="navbar-brand" id="pastafyLogo" href="/"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/penne-pasta-3113269-2597347.png"><span class="navbar-brand">PASTA-FY</span></a>
+      <div class="navbarLinks">
+        <a href="/ingredients">Explore</a>
+        <% if (user) { %>
+          <a href="#">Products</a>
+          <a href="/builds">Build</a>
+          <a href="/logout">LOG OUT</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">LOG IN</a>
+        <% } %>
+      </div>
+    </nav>
+  <br>
 
 <div id="main_content">
 
@@ -34,8 +35,8 @@
     <li class="notselected" id="page5" onclick="change_tab(this.id);">Meals</li>
     
     <div class='hidden_desc' id="page1_desc">
-        <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
+            <img src="<%= p.img %>">
             <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
             <form action="/ingredients/<%= p._id %>/pastas" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Build</button>
@@ -47,6 +48,7 @@
     <div class='hidden_desc' id="page2_desc">
      <h2>Page 2</h2>
         <% sauces.forEach(s=>{ %>
+            <img src="<%= s.img %>">
             <a href="/ingredients/<%= s._id %>"><%= s.name %></a>
             <form action="/ingredients/<%= s._id %>/sauces" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Build</button>
@@ -56,12 +58,16 @@
     </div>
     
     <div class='hidden_desc' id="page3_desc">
-     <h2>Page 3</h2>
         <% veges.forEach(v=>{ %>
-            <a href="/ingredients/<%= v._id %>"><%= v.name %></a>
-            <form action="/ingredients/<%= v._id %>/veges" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Build</button>
-            </form>
+            <div class="d-flex">
+                <img src="<%= v.img %>">
+                <div class="d-flex ingredientList">
+                    <a href="/ingredients/<%= v._id %>"><%= v.name %></a>
+                    <form action="/ingredients/<%= v._id %>/veges" method="POST">
+                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                    </form>
+                </div>
+            </div>
             <br>
         <% }) %>
     </div>
@@ -69,6 +75,7 @@
     <div class='hidden_desc' id="page4_desc">
      <h2>Page 4</h2>
         <% proteins.forEach(p=>{ %>
+            <img src="<%= p.img %>">
             <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
             <form action="/ingredients/<%= p._id %>/proteins" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Build</button>
@@ -87,8 +94,8 @@
     </div>
     
     <div id="page_content">
-     <h2>Page 1</h2>
         <% pastas.forEach(p=>{ %>
+            <img src="<%= p.img %>">
             <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
             <form action="/ingredients/<%= p._id %>/pastas" method="POST">
                 <button class="btn btn-danger" type='submit'>Add to Build</button>

@@ -6,6 +6,7 @@ const proteinSchema = new Schema({
     animal: String,
     desc: String,
     recommend: String,
+    img: String,
 }, {timestamps: true});
 
 module.exports = mongoose.model('Protein', proteinSchema);

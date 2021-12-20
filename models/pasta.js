@@ -6,6 +6,7 @@ const pastaSchema = new Schema({
     length: String,
     desc: String,
     recommend: String,
+    img: String,
 }, {timestamps: true});
 
 module.exports = mongoose.model('Pasta', pastaSchema);

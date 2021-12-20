@@ -19,6 +19,8 @@ function create(req, res) {
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
         // console.log(req.body.reviewRating) shows number 
+        meal.totalReviewRating.insert(req.body.reviewRating);
+        console.log(meal.totalReviewRating);
 
         meal.reviews.push(req.body);
         meal.save(function(err) {
