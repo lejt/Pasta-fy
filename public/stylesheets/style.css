@@ -78,12 +78,19 @@ main img {
 }
 .ingredientList a {
   font-size: 30px;
+  width: 160px;
 }
 .ingredientList button {
   position: absolute;
   right: 0;
 }
-
+.mealList {
+  font-size: 20px;
+}
+/* Ingredients details (show) */
+pasta.img, sauce.img, vege.img, protein.img {
+  height: 100px;
+} 
 /* Build Page */
 .textBgBuild {
   background-color: azure;
@@ -227,4 +234,9 @@ main img {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color:rgb(14, 80, 58);
 }

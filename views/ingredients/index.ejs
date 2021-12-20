@@ -36,23 +36,30 @@
     
     <div class='hidden_desc' id="page1_desc">
         <% pastas.forEach(p=>{ %>
-            <img src="<%= p.img %>">
-            <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
-            <form action="/ingredients/<%= p._id %>/pastas" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Build</button>
-            </form>
+            <div class="d-flex">
+                <img src="<%= p.img %>">
+                <div class="d-flex ingredientList">
+                    <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
+                    <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                    </form>
+                </div>
+            </div>
             <br>
         <% }) %>
     </div>
    
     <div class='hidden_desc' id="page2_desc">
-     <h2>Page 2</h2>
         <% sauces.forEach(s=>{ %>
-            <img src="<%= s.img %>">
-            <a href="/ingredients/<%= s._id %>"><%= s.name %></a>
-            <form action="/ingredients/<%= s._id %>/sauces" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Build</button>
-            </form>
+            <div class="d-flex">
+                <img src="<%= s.img %>">
+                <div class="d-flex ingredientList">
+                    <a href="/ingredients/<%= s._id %>"><%= s.name %></a>
+                    <form action="/ingredients/<%= s._id %>/sauces" method="POST">
+                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                    </form>
+                </div>
+            </div>
             <br>
         <% }) %>
     </div>
@@ -73,33 +80,44 @@
     </div>
 
     <div class='hidden_desc' id="page4_desc">
-     <h2>Page 4</h2>
         <% proteins.forEach(p=>{ %>
-            <img src="<%= p.img %>">
-            <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
-            <form action="/ingredients/<%= p._id %>/proteins" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Build</button>
-            </form>
+            <div class="d-flex">
+                <img src="<%= p.img %>">
+                <div class="d-flex ingredientList">
+                    <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
+                    <form action="/ingredients/<%= p._id %>/proteins" method="POST">
+                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                    </form>
+                </div>
+            </div>
             <br>
         <% }) %>
     </div>
 
     <div class='hidden_desc' id="page5_desc">
-     <h2>Page 5</h2>
+        <h1 class="display-3">Global Users' Dishes:</h1>
         <% meals.forEach(m=>{ %>
-            <a href="/ingredients/<%= m._id %>"><%= m.name %></a><br>
-            <!-- aggregate of all reviews -->
+            <div class="mealList">
+                <ul>
+                    <li><a href="/ingredients/<%= m._id %>"><%= m.name %></a><br></li>
+                    <!-- aggregate of all reviews, put in table of two columns -->
+                </ul>
+            </div>
             <br>
         <% }) %>
     </div>
     
     <div id="page_content">
         <% pastas.forEach(p=>{ %>
-            <img src="<%= p.img %>">
-            <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
-            <form action="/ingredients/<%= p._id %>/pastas" method="POST">
-                <button class="btn btn-danger" type='submit'>Add to Build</button>
-            </form>
+            <div class="d-flex">
+                <img src="<%= p.img %>">
+                <div class="d-flex ingredientList">
+                    <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
+                    <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                    </form>
+                </div>
+            </div>
             <br>
         <% }) %>
     </div>
