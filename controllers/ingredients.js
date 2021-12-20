@@ -54,7 +54,7 @@ function show(req, res) {
                             .populate('sauce')
                             .populate('vege')
                             .populate('protein')
-                            .populate('vegetables')
+                            // .populate('vegetables')
 
                             .exec(function(err, meal) {
                                 res.render('ingredients/show', {meal, pasta, sauce, vege, protein})

@@ -94,38 +94,41 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
 
       <label>Pasta</label>
         <select name="pasta">
-          <option value=""></option>
           <% build.pasta.forEach(bp=> { %>
             <option value="<%= bp._id %>"><%= bp.name %></option>
           <% }) %>
         </select><br>
       <label>Sauce</label>
         <select name="sauce">
-          <option value=""></option>
           <% build.sauce.forEach(bs=> { %>
             <option value="<%= bs._id %>"><%= bs.name %></option>
           <% }) %>
         </select><br>
-      <label>Vegetable</label>
-        <select name="vege">
+      <label>Vegetable</label><br>
+        <!-- <select name="vege">
           <option value=""></option>
           <% build.vege.forEach(bv=> { %>
             <option value="<%= bv._id %>"><%= bv.name %></option>
           <% }) %>
-        </select><br>
-        <!-- MULTIPLE VEGE OPTION -->
+        </select><br> -->
 
+        <!-- MULTIPLE VEGE OPTION -->
         <% build.vege.forEach(bv=> { %>
-          <input type="checkbox" value="<%= bv.id %>" name="vegesss"><%= bv.name %><br>
+          <input type="checkbox" value="<%= bv.id %>" name="vege"><%= bv.name %><br>
         <% }) %><br>
 
       <label>Protein</label>
-        <select name="protein">
+        <!-- <select name="protein">
           <option value=""></option>
           <% build.protein.forEach(bp=> { %>
             <option value="<%= bp._id %>"><%= bp.name %></option>
           <% }) %>
-        </select><br><br>
+        </select><br><br> -->
+        
+        <!-- MULTIPLE VEGE OPTION -->
+        <% build.protein.forEach(bp=> { %>
+          <input type="checkbox" value="<%= bp.id %>" name="protein"><%= bp.name %><br>
+        <% }) %><br>
 
       <label>Name your dish!</label><br>
       <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta">
