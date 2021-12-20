@@ -105,45 +105,29 @@ LIST ALL SELECTED ITEMS IN ITS OWN CATEGORIES
       <form action="/builds" method="POST">
   
         <label>Pasta</label>
-          <select name="pasta">
+          <select name="pasta" required oninvalid="this.setCustomValidity('Please add a pasta from Explore page')" oninput="setCustomValidity('')">
             <% build.pasta.forEach(bp=> { %>
               <option value="<%= bp._id %>"><%= bp.name %></option>
             <% }) %>
           </select><br>
         <label>Sauce</label>
-          <select name="sauce">
+          <select name="sauce" required oninvalid="this.setCustomValidity('Please add a sauce from Explore page')" oninput="setCustomValidity('')">
             <% build.sauce.forEach(bs=> { %>
               <option value="<%= bs._id %>"><%= bs.name %></option>
             <% }) %>
           </select><br>
         <label>Vegetable</label><br>
-          <!-- <select name="vege">
-            <option value=""></option>
-            <% build.vege.forEach(bv=> { %>
-              <option value="<%= bv._id %>"><%= bv.name %></option>
-            <% }) %>
-          </select><br> -->
-  
-          <!-- MULTIPLE VEGE OPTION -->
           <% build.vege.forEach(bv=> { %>
             <input type="checkbox" value="<%= bv.id %>" name="vege"><%= bv.name %><br>
           <% }) %><br>
   
         <label>Protein</label>
-          <!-- <select name="protein">
-            <option value=""></option>
-            <% build.protein.forEach(bp=> { %>
-              <option value="<%= bp._id %>"><%= bp.name %></option>
-            <% }) %>
-          </select><br><br> -->
-          
-          <!-- MULTIPLE VEGE OPTION -->
           <% build.protein.forEach(bp=> { %>
             <input type="checkbox" value="<%= bp.id %>" name="protein"><%= bp.name %><br>
           <% }) %><br>
   
         <label>Name your dish!</label><br>
-        <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta">
+        <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta" required>
         <br><br>
         <button class="btn btn-primary" type="submit">Cook!</button>
   
