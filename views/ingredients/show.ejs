@@ -67,7 +67,14 @@
     <% }) %>
     <br><br>
     
-    <strong>Meal description/recipe:</strong><br>
+    <strong>Dish description/recipe:</strong><br>
+    <% if (meal.desc) { %>
+        <%= meal.desc %>
+    <% } else { %>
+        <!-- Trigger Modal - Add dish description -->
+        <button id="myBtn" class="myBtn btn btn-secondary">Add a description/recipe</button>
+    <% } %>
+    <br><br>
 
     <!-- Add Review -->
     <!-- <button id="addReviewBtn" class="btn btn-primary" type="submit">Add Review</button> -->
@@ -85,8 +92,7 @@
             <button class="btn btn-primary" type="submit">Add Review</button>
         </form>
     </div>
-    <br>
-
+    <br>                    
         <h4>Reviews</h4> <hr>
         <% if (meal.reviews.length) { %>
             <div class="reviews-container">
@@ -109,8 +115,8 @@
                                 <div class="d-flex">
                                     
                                     <div class="px-5">
-                                        <!-- Trigger/Open The Modal -->
-                                        <button id="myBtn" class="btn btn-secondary btn-sm">Edit</button>
+                                        <!-- Trigger Modal - Edit review -->
+                                        <button id="myBtn2" class="myBtn2">Edit</button>
                                     </div>
                                     <div>
                                         <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
@@ -131,12 +137,29 @@
                         </div>
                     </div><hr>
 
-                    <!-- The Modal -->
+
+<!-- 
+                    
                     <div id="myModal" class="modal">
 
-                        <!-- Modal content -->
+                        
                         <div class="modal-content">
-                            <span class="close">&times;</span>
+                            <span class="close">×</span>
+                            <form action="/ingredients/<%= meal._id %>" method="POST" >
+                                <label>Write your dish's description here:</label><br>
+                                <textarea name="desc"></textarea><br>
+
+                                <button class="btn btn-primary" type="submit">Add Description</button> 
+                            </form>
+                        </div>
+                    </div>
+
+                    
+                    <div id="myModal2" class="modal">
+
+                    
+                        <div class="modal-content">
+                            <span class="close">×</span>
                             <p>Update your review here!</p>
                             <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
                                 <textarea name="content" placeholder="<%= r.content %>"></textarea><br>
@@ -151,12 +174,11 @@
                                 <button type="submit">Submit</button>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
+                    
+                    <!-- <div id="addReviewModal" class="modal">
 
-                    <!-- The Modal -->
-                    <div id="addReviewModal" class="modal">
-
-                        <!-- Modal content -->
+                       
                         <div class="modal-content2">
                             <span class="close2">&times;</span>
                             <form action="/ingredients/<%= meal._id %>/reviews" method="POST" >
@@ -173,20 +195,44 @@
                                 <button class="btn btn-primary" type="submit">Add Review</button> 
                             </form>
                         </div>
+                    </div>  -->
+
+                    <h2>Modal Example</h2>
+
+                    <!-- Trigger/Open The Modal -->
+                    <button class="myBtn_multi">Open Modal</button>
+                    <button class="myBtn_multi">Open Modal2</button>
+
+                    <!-- The Modal -->
+                    <div class="modal modal_multi">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close close_multi">×</span>
+                            <p>Some text in the Modal..</p>
+                        </div>
+
                     </div>
 
+                    <!-- The Modal -->
+                    <div  class="modal modal_multi">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close close_multi">×</span>
+                            <p>Some text in the Modal..2</p>
+                        </div>
+
+                    </div>
+                    
                 <% }) %>
             </div>
             
         <% } else { %>
             <h5>No Reviews Yet</h5>
         <% } %>     
+
 <% } %>
         
-
-
-
-
-
 
 <%- include('../partials/footer') %>
