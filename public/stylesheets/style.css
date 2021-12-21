@@ -30,15 +30,13 @@ body {
 .navbarLinks {
   display: flex;
   justify-content: end;
+  align-items: center;
 }
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
-}
-.login img {
-  height: 20px;
 }
 /* Home Page */
 main img {
@@ -48,22 +46,25 @@ main img {
   z-index:-1;
 }
 .homeMsg {
-  color:rgb(3, 235, 134);
-  background-color: rgba(0, 0, 0, 0.8);
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 10px auto 0;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 .homeMsg p {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 .homeParagraph {
-  color: rgb(5, 233, 134);
-  background-color: rgba(3, 1, 1, 0.8);
-  padding: 20px;
-  width: 50vw;
-  float: right;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  width: 80vw;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 /* Ingredients index */
@@ -98,6 +99,15 @@ pasta.img, sauce.img, vege.img, protein.img {
 /* Footer */
 footer {
   background-color:rgb(14, 80, 58);
+  height: 50px;
+  position: relative;
+}
+footer p {
+  position: absolute;
+  margin: 20px auto;
+  font-size: 12px;
+  left: 50vw;
+  transform: translateX(-50%);
 }
 
 @media only screen and (min-width: 768px) {

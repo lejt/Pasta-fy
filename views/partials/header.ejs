@@ -13,11 +13,11 @@
   <nav class="navbar fixed-top">
     <a class="navbar-brand" id="pastafyLogo" href="/"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/penne-pasta-3113269-2597347.png"><span class="navbar-brand">PASTA-FY</span></a>
     <div class="navbarLinks">
+      <a href="/ingredients">Explore</a>
       <% if (user) { %>
           <a href="/builds">Build</a>
           <a href="/logout">LOG OUT</a>
         <% } else { %>
-          <a href="/ingredients">Explore</a>
           <a href="/auth/google" class="login">LOG IN</a>
       <% } %>
     </div>
