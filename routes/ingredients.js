@@ -15,6 +15,12 @@ router.post('/ingredients/:id/sauces', ingredientsCtrl.createSauce);
 router.post('/ingredients/:id/veges', ingredientsCtrl.createVege);
 router.post('/ingredients/:id/proteins', ingredientsCtrl.createProtein);
 
+// POST '/ingredients/:id/' page to add description to show page
+router.post('/ingredients/:id', ingredientsCtrl.createDesc);
+
+// PUT '/ingredients/:id/' page to edit description to show page
+router.put('/ingredients/:id', ingredientsCtrl.updateDesc);
+
 // DELETE '/:id' element that in the category
 router.delete('/pasta/:id', ingredientsCtrl.deleteSelectedPasta);
 router.delete('/sauce/:id', ingredientsCtrl.deleteSelectedSauce);

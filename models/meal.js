@@ -18,13 +18,8 @@ const mealSchema = new Schema({
     protein: [{type: Schema.Types.ObjectId, ref: 'Protein'}],
     ingredients: [{type: String}],
     desc: String,
-    img: {
-        data: Buffer,
-        contentType: String
-    },
-    recipe: String,
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
-    totalReviewRating: {type: Number, default: parseInt(0)},
     reviews: [reviewSchema],
 }, {
     timestamps: true

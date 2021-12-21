@@ -61,6 +61,4 @@ function updateReview(req, res) {
             res.redirect(`/ingredients/${meal._id}`)
         })
     })
-
-  
 }

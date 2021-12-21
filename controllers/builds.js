@@ -93,6 +93,8 @@ function combine(req, res) {
     
         build.save(function(err) {
             if (err) console.log(err);
+
+            req.body.user = req.user._id;
             Meal.create(req.body, function(err, meal) {
                 // console.log(meal)
                 res.redirect('/builds');

@@ -16,6 +16,8 @@ module.exports = {
     deleteSelectedSauce,
     deleteSelectedVege,
     deleteSelectedProtein,
+    createDesc,
+    updateDesc,
 }
 
 function index(req, res) {
@@ -160,4 +162,31 @@ function deleteSelectedProtein(req, res) {
             res.redirect('/builds');
         })
     })
+}
+
+function createDesc(req, res) {
+    Meal.findById(req.params.id, (err, meal)=> {
+        meal.desc = req.body.desc;
+        meal.save(function(err) {
+            if (err) console.log(err);
+            // console.log(meal);
+            res.redirect(`/ingredients/${req.params.id}`);
+        })
+    })
+}
+
+function updateDesc(req, res) {
+    console.log('update initiated')
+    // user who created the build on this page should also be the same owner of reviews
+    Meal.findById(req.params.id, (err, meal)=> {
+        if (!meal.user.equals(req.user._id)) return res.redirect(`/ingredients/${req.params.id}`);
+        console.log('after verfi')
+        meal.desc = req.body.desc;
+
+        meal.save(function(err) {
+            if (err) console.log(err);
+            res.redirect(`/ingredients/${req.params.id}`)
+        })
+    })
+    // Build.findOne({user: req.user._id}, function(err, build) {
 }
