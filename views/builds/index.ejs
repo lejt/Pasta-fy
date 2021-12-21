@@ -91,37 +91,37 @@
     </div>
   </div>
 
-  <!-- SHOW INGREDIENTS READY TO COMBINE ON RIGHT OF PAGE -->
+  <!-- List all the ingredients on the left but in selectable form for dish generation -->
   <div class="textBgCombine combine-container">
     <% if (build) { %>
-      <h5>Combine ingredients into dish!</h5>
+      <h5>Combine ingredients into dish!</h5><hr>
       <form action="/builds" method="POST">
   
-        <label>Pasta</label>
-          <select name="pasta" required oninvalid="this.setCustomValidity('Please add a pasta from Explore page')" oninput="setCustomValidity('')">
+        <label id="combinePasta">Pasta</label><br>
+          <select name="pasta" class="form-control form-control-sm" required oninvalid="this.setCustomValidity('Please add a pasta from Explore page')" oninput="setCustomValidity('')">
             <% build.pasta.forEach(bp=> { %>
               <option value="<%= bp._id %>"><%= bp.name %></option>
             <% }) %>
           </select><br>
-        <label>Sauce</label>
-          <select name="sauce" required oninvalid="this.setCustomValidity('Please add a sauce from Explore page')" oninput="setCustomValidity('')">
+        <label id="combineSauce">Sauce</label><br>
+          <select name="sauce" class="form-control form-control-sm" required oninvalid="this.setCustomValidity('Please add a sauce from Explore page')" oninput="setCustomValidity('')">
             <% build.sauce.forEach(bs=> { %>
               <option value="<%= bs._id %>"><%= bs.name %></option>
             <% }) %>
-          </select><br>
-        <label>Vegetable</label><br>
+          </select><hr>
+        <label id="combineVege">Vegetable</label><br>
           <% build.vege.forEach(bv=> { %>
-            <input type="checkbox" value="<%= bv.id %>" name="vege"><%= bv.name %><br>
+            <input type="checkbox" value="<%= bv.id %>" name="vege"> <%= bv.name %><br>
           <% }) %><br>
-        <label>Protein</label><br>
+        <label id="combineProtein">Protein</label><br>
           <% build.protein.forEach(bp=> { %>
-            <input type="checkbox" value="<%= bp.id %>" name="protein"><%= bp.name %><br>
+            <input  type="checkbox" value="<%= bp.id %>" name="protein"> <%= bp.name %><br>
           <% }) %><br>
   
-        <label>Name your dish!</label><br>
-        <input name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta" required>
+        <label id="combineName">NAME YOUR DISH!</label><br>
+        <input class="form-control form-control-sm" name="mealName" type="text" placeholder="Bestest Pasta-iest Pasta" required>
         <br><br>
-        <button class="btn btn-primary" type="submit">Cook!</button>
+        <button class="btn btn-primary" type="submit">COOK</button>
   
       </form>
     <% } %>
