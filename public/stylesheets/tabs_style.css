@@ -1,6 +1,5 @@
-
 #main_content {
-    margin: 150px auto 0;
+    margin: 30px auto 0;
     max-width: 90vw;
 }
 #main_content li {
@@ -20,7 +19,7 @@
 }
 #main_content li.selected {
     background-color:#aa3c11;
-    color:#d37f12;	
+    color:#d6933b;	
 }
 #main_content .hidden_desc {
     display: none;
@@ -34,10 +33,20 @@
     box-shadow: 5px 10px rgba(0,0,0,0.5);
     line-height: 1.6em;
     word-spacing:4px;
-    height: 60vh;
+    height: 70vh;
     overflow: auto;
 }
 
 #main_content a {
     color: black;
+}
+
+/* ----------------- MEDIA QUERY ------------------- */
+@media only screen and (min-width: 769px) {
+    #main_content li {        
+        padding-bottom: 14px;
+        padding-right: 5vw;            
+        padding-left: 5vw;
+        font-size: 25px;
+    }
 }
