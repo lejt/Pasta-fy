@@ -4,6 +4,7 @@ body {
   min-height: 100vh;
   min-width: 98vw;
   position: relative;
+  padding-top: 100px;
   padding-bottom: 100px;
 }
 /* Nav */
@@ -13,18 +14,18 @@ body {
   position: relative;
 }
 #pastafyLogo img {
-  height: 50px;
+  height: 35px;
   margin-right: 10px;
-  margin-top: -15px;
+  margin-top: -10px;
 }
 .navbar a {
-  padding: 0 20px;
+  padding: 0 5px;
   color:rgb(14, 80, 58);
-  font-size: 20px;
+  font-size: 18px;
 }
 .navbar-brand span {
   color: rgb(255, 255, 255);
-  font-size: 40px;
+  font-size: 23px;
 }
 .navbarLinks {
   display: flex;
@@ -49,9 +50,9 @@ main img {
 .homeMsg {
   color:rgb(3, 235, 134);
   background-color: rgba(0, 0, 0, 0.8);
-  margin: 20vh auto 0;
+  margin: 10px auto 0;
   padding: 10px;
-  /* border-radius: 5px; */
+  border-radius: 5px;
 }
 .homeMsg p {
   display: flex;
@@ -97,4 +98,71 @@ pasta.img, sauce.img, vege.img, protein.img {
 /* Footer */
 footer {
   background-color:rgb(14, 80, 58);
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding: 0 5px;
+  }
+  #pastafyLogo img {
+    height: 50px;
+    margin-right: 10px;
+    margin-top: -15px;
+  }
+  .navbar a {
+    padding: 0 20px;
+    font-size: 20px;
+  }
+  .navbar-brand span {
+    font-size: 40px;
+  }
+  main img {
+    max-width: 50vw;
+    position: absolute;
+    left: -1px;
+  }
+  .homeMsg {
+    margin: 20vh auto 0;
+    padding: 10px;
+  }
+  .homeMsg p {
+    display: flex;
+    justify-content: end;
+  }
+  .homeParagraph {
+    padding: 20px;
+    width: 50vw;
+    float: right;
+  }
+  /* Ingredients index */
+  #page_content img {
+    height: 100px;
+    width: 100px;
+  }
+  .ingredientList {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 100%;
+    position: relative;
+  }
+  .ingredientList a {
+    font-size: 30px;
+    line-height: 1;
+    width: 160px;
+  }
+  .ingredientList button {
+    position: absolute;
+    right: 0;
+  }
+  .mealList {
+    font-size: 20px;
+  }
+  /* Ingredients details (show) */
+  pasta.img, sauce.img, vege.img, protein.img {
+    height: 100px;
+  } 
+  /* Footer */
+  footer {
+    
+  }
 }
