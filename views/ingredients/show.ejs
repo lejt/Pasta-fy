@@ -35,8 +35,15 @@
 <% } %>
 <% if (sauce) { %>
     <div class="ingredientDetail">
-        <h1 class="display-1"><%= sauce.name %></h1><hr><br>
-        <img src="<%= sauce.img %>"> Brief history: <br> <%= sauce.desc %>
+        <h1 class="display-1"><%= sauce.name %></h1><hr>
+        <div class="d-flex">
+            <div>
+                <img src="<%= sauce.img %>">
+            </div>
+            <div class="ingredientsDesc">
+                <strong>Brief history:</strong> <br><%= sauce.desc %>
+            </div>
+        </div>
     </div>
 <% } %>
 <% if (vege) { %>
@@ -138,7 +145,7 @@
                     <div><img alt="avatar" src="<%= r.userAvatar %>"></div>
                     <div class="reviewBg">
                         <div class="d-flex justify-content-between">
-                            <div>
+                            <div class="reviewContentNameDate">
                                 <% for (let i=0; i < 5; i++) { %>
                                     <% if (i < r.reviewRating ) { %>
                                         <span class="fa fa-star checked"></span>
@@ -163,8 +170,8 @@
                                 </div>
                             <% } %>
                         </div>
-                        <%= r.content %>
-                        <div class="d-flex justify-content-between">
+                        <div class="reviewContentNameDate"><%= r.content %></div>
+                        <div class="reviewContentNameDate d-flex justify-content-between">
                             <div>
                                 - <%= r.userName %>
                             </div>

@@ -72,7 +72,7 @@
             <div class="d-flex">
                 <img src="<%= v.img %>">
                 <div class="d-flex ingredientList">
-                    <a href="#"><%= v.name %></a>
+                    <p><%= v.name %></p>
                     <% if (user) { %>
                         <form action="/ingredients/<%= v._id %>/veges" method="POST">
                             <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
@@ -89,7 +89,7 @@
             <div class="d-flex">
                 <img src="<%= p.img %>">
                 <div class="d-flex ingredientList">
-                    <a href="#"><%= p.name %></a>
+                    <p><%= p.name %></p>
                     <% if (user) { %>
                         <form action="/ingredients/<%= p._id %>/proteins" method="POST">
                             <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
@@ -105,10 +105,11 @@
         <h1 class="display-6">Global Users' Dishes:</h1>
         <% meals.forEach(m=>{ %>
             <div class="mealList">
-                <a href="/ingredients/<%= m._id %>"><%= m.name %></a><br>
+                <ul>
+                    <li><a href="/ingredients/<%= m._id %>"><%= m.name %></a></li>
+                </ul>
                 <!-- aggregate of all reviews, put in table of two columns -->
             </div>
-            <br>
         <% }) %>
     </div>
     

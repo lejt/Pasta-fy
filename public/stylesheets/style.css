@@ -188,12 +188,23 @@ footer p {
     line-height: 1;
     width: 60vw;
   }
+  .ingredientList p {
+    font-size: 30px;
+    line-height: 1;
+    width: 60vw;
+  }
   .ingredientList button {
     position: absolute;
     right: 0;
   }
   .mealList {
     font-size: 20px;
+  }
+  .mealList ul {
+    padding: 0;
+    margin-left: 30px;
+    display: list-item;
+    list-style-type: square;
   }
   /* Ingredients details (show) */
   pasta.img, sauce.img, vege.img, protein.img {
