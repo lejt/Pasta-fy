@@ -10,15 +10,16 @@
     padding-right: 2vw;             /* <--- was 5vw adjust size of tab */
     padding-left: 2vw;
     border-radius:5px 5px 0px 0px;
-    font-weight:bold;
-    cursor:pointer;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
 }
 #main_content li.notselected {
     background-color:#692d0a;
     color:#020000;	
 }
 #main_content li.selected {
-    background-color:#aa3c11;
+    background-color:#974322;
     color:#d6933b;	
 }
 #main_content .hidden_desc {
@@ -26,7 +27,7 @@
     visibility: hidden;
 }
 #main_content #page_content {
-    background-color:#aa3c11;
+    background-color:#974322;
     padding: 30px;              
     margin-top: 9px;
     border-radius:0px 5px 5px 5px;
