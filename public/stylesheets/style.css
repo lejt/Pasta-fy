@@ -76,7 +76,7 @@ main img {
   width: 100px;
   border: 5px solid rgb(14, 80, 58);
   border-radius: 50%;
-  margin-left: -10px;
+  margin-left: -15px;
 }
 .ingredientList {
   margin-top: 30px;
