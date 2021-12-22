@@ -1,5 +1,5 @@
 #main_content {
-    margin: 30px auto 0;
+    margin: 50px auto 0;
     max-width: 90vw;
 }
 #main_content li {
@@ -7,7 +7,7 @@
     list-style-type:none;
     padding-top: 12px;             
     padding-bottom: 12px;
-    padding-right: 2vw;             /* <--- was 5vw adjust size of tab */
+    padding-right: 2vw;             
     padding-left: 2vw;
     border-radius:5px 5px 0px 0px;
     font-weight: bold;

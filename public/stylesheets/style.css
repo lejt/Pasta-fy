@@ -40,6 +40,7 @@ body {
 }
 /* Home Page */
 .homeLayout {
+  margin-top: 10px;
   height: 100vh;
   width: 100%;
 }
@@ -60,7 +61,7 @@ body {
   text-align: center;
   border: 10px solid black;
   width: 300px;
-  margin-left: 10%;
+  margin-left: 8%;
 }
 .descCard {
   background-color: rgba(255, 255, 255, 0.8);
@@ -70,7 +71,7 @@ body {
   border-radius: 5px;
   text-align: center;
   width: 300px;
-  margin-left: 10%;
+  margin-left: 8%;
 }
 
 /* Ingredients index */
@@ -144,27 +145,36 @@ footer p {
   .homeLayout {
     display: flex;
     height: 100vh;
+  }
+  .homeSplash {
+    width: 50vw;
+    max-height: 100vh;
     overflow: hidden;
+    /* border: 1px solid blue; */
+    margin-left: -15px;
+    margin-top: -15px;
   }
   .homeSplash img {
     position: relative; 
     z-index: -1;
-    width: 50vw;
   }
   .homeMsg {
     position: absolute;
-    height: 100vh;
-    width: 50vw;
-    right: 0;
     top: 80px;
+    text-align: center;
   }
   .titleCard {
     background-color: rgba(255, 255, 255, 1);
-    width: 50vw;
+    width: 60vw;
     margin-top: 10vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
   .descCard {
+    background-color: rgba(255, 255, 255, 1);
     width: 400px;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
   .verticalLine {
     background-color: #000;
@@ -174,7 +184,7 @@ footer p {
     top: 75px;
     left: 50%;
     transform: translateX(-50%);
-    width: 70px;
+    width: 40px;
   }
   /* Ingredients index */
   .ingredientList {
