@@ -76,17 +76,18 @@ main img {
   width: 100px;
   border: 5px solid rgb(14, 80, 58);
   border-radius: 50%;
+  margin-left: -10px;
 }
 .ingredientList {
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: 10px;
   width: 100%;
   position: relative;
 }
 .ingredientList a {
   font-size: 15px;
   line-height: 1;
-  width: 100px;
+  width: 80px;
 }
 .ingredientList button {
   position: absolute;
