@@ -118,6 +118,7 @@ footer p {
     padding-top: 50px;
     padding-bottom: 50px;
   }
+  /* Header */
   .navbar {
     padding: 0 5px;
   }
@@ -133,6 +134,7 @@ footer p {
   .navbar-brand span {
     font-size: 40px;
   }
+  /* Home Page */
   main img {
     max-width: 50vw;
     position: absolute;
@@ -151,20 +153,16 @@ footer p {
     width: 45vw;
   }
   /* Ingredients index */
-  #page_content img {
-    height: 100px;
-    width: 100px;
-  }
   .ingredientList {
     margin-top: 30px;
     margin-left: 20px;
-    width: 100%;
+    overflow: hidden; 
     position: relative;
   }
   .ingredientList a {
     font-size: 30px;
     line-height: 1;
-    width: 160px;
+    width: 60vw;
   }
   .ingredientList button {
     position: absolute;
