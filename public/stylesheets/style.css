@@ -94,6 +94,8 @@ body {
 }
 .ingredientList button {
   position: absolute;
+  border: 1px solid rgb(0, 0, 0);
+  color: black;
   right: 0;
 }
 .mealList {

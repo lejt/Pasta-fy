@@ -16,29 +16,35 @@ exports.pastas = [
     {name: "Rotini", length: "short", img: "https://cdn.w600.comps.canstockphoto.com/full-background-of-dry-uncooked-rotini-picture_csp35034072.jpg"},
     {name: "Spaghetti", length: "long", img: "https://www.italianfoodtech.com/files/2016/03/shutterstock_75014713-1.jpg"},
     {name: "Tortellini", length: "short", img: "https://images.eatthismuch.com/site_media/img/5286_brittbae93_2f9c645e-9139-4ab5-8bf3-1f08980b834e.png"},
-    {name: "Ziti", length: "short", img: "https://iowagirleats.com/wp-content/uploads/2019/09/Gluten-Free-Baked-Ziti-iowagirleats-04.jpg"},
+    {name: "Ziti", length: "short", img: "https://simmerandsauce.com/wp-content/uploads/2017/09/fullsizeoutput_16a53.jpeg"},
 ];
 
 exports.sauces = [
-    {name: "Marinara", base: "tomato"},
-    {name: "Alfredo", base: "cream cheese, whipping cream"},
-    {name: "Bolognese", base: "tomato"},
-    {name: "Amatriciana", base: "tomato"},
-    {name: "Roasted Tomato", base: "tomato"},
-    {name: "Frutti di mare", base: "tomato, white wine, clam juice"},
-    {name: "Salsa di Noci (Walnut)", base: "milk"},
-    {name: "Pesto", base: "basil, olive oil",
+    {name: "Marinara", base: "tomato", img: "https://thecozyapron.com/wp-content/uploads/2020/04/marinara-sauce_thecozyapron_1.jpg",
+    desc: `The exact location of Marinara Sauce’s creation seems to be lost to time, but it was likely first developed in the southern region of Italy, in either Naples or Sicily, after tomatoes first appeared in Europe via explorers from the New World in the 16th century. This comes well after the first forms of pasta arrived, which arrived on Italian shores with Arab traders in the 12 century. 
+    Tomato sauce is first referenced in the Italian cookbook Lo Scalco alla Moderna (The Modern Steward), written by Italian chef Antonio Latini in 1692. Meanwhile, a recipe for pasta with tomato sauce appears in the 1790 cookbook, L’Apicio Moderno, by chef Francesco Leonardi.
+    As for how a particular preparation of tomato sauce came to be known as “marinara,” one needs to look toward the sea. “Marinara” translates to “seafaring”—or colloquially to “sailor style” or “mariner style.” It was given the name marinara not because it was once a seafood-style sauce, but because it was the preferred meal of Italy’s merchants during long expeditions at sea.`},
+    {name: "Cacio E Pepe (Butter sauce)", base: "pecorino romano, black pepper", img: "https://img.apmcdn.org/6d96ea6663a2e6156a4c507c86e61f218668c588/uncropped/0682a3-splendid-table-cacio-e-pepe-tasting-rome.jpg",
+    desc: `The cacio e pepe recipe is one of the most ancient dish of the Italian cuisine. The legend date back the origin of this simply but delicious Italian spaghetti and cheese to Roman Empire. For centuries, cacio e pepe has been the perfect meal of the Roman shepherds. Dried pasta, aged pecorino and black peppers are easy-to-carry ingredient and hard to spoil. Despite what many people think, cacio e pepe recipe does not needs any oil, cream or butter. The starch inside the spaghetti and the grated pecorino combined in the right way are enough to create the cacio e pepe sauce. As in many Roman recipes, the pepper have to be very abundant.`},
+    {name: "Alfredo", base: "butter, parmigiano-reggiano", img: "https://www.tasteandtellblog.com/wp-content/uploads/2021/03/Easy-Alfredo-Sauce-1.jpg",
+    desc: `Before being an iconic sauce, the sauce was a set with pasta, called Fettuccine Alfredo. Fettuccine all’Alfredo was created in 1914 by Alfredo Di Lelio, who had four years earlier opened a restaurant in Rome, Italy, under his first name on the Via della Scrofa. At the time Alfredo’s wife had given birth to their son Armando but was left without an appetite. Alfredo tried everything, until he made a plate of fresh fettuccine and swirled it in a pan with Parmigiano and butter. One bite and his wife’s appetite came roaring back, and Alfredo knew he was on to something.`},
+    {name: "Bolognese", base: "meat-based tomato", img: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2018%2F12%2F20%2F0119BIG_1493.jpg",
+    desc: `The origins of the Bolognese ragù are related to those of the French ragoût, a stew of ingredients reduced to small pieces, which became popular in the 18th century.[5]
+    The earliest documented recipe for a ragù served with pasta comes from late 18th century Imola, near Bologna, from Alberto Alvisi, cook of the local Cardinal[6] Barnaba Chiaramonti, later Pope Pius VII.
+    In 1891 Pellegrino Artusi published a recipe for a ragù characterized as bolognese in his cookbook.[7] Artusi's recipe, which he called Maccheroni alla bolognese, is thought to derive from the mid 19th century when he spent considerable time in Bologna (maccheroni being a generic term for pasta, both dried and fresh[8]). The sauce called for predominantly lean veal filet along with pancetta, butter, onion, and carrot.`},
+    {name: "Frutti di mare (Seafood sauce)", base: "tomato, white wine, clam juice", img: "https://www.askchefdennis.com/wp-content/uploads/2020/08/frutta-di-mare-10-680x680.jpg",
+    desc: `The Italian term frutti di mare means “fruit of the sea,” and refers to seafood.`},
+    {name: "Pesto", base: "basil, olive oil", img: "https://www.simplyrecipes.com/thmb/A0W7431YIrdX2dTAEhaya5wOxus=/2000x1333/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2014__08__Fresh-Basil-Pesto-LEAD-2-d990e7900183450dbddb69628bd8a160.jpg",
     desc: `Pesto is a sauce originating in Genoa in the Liguria region of northern Italy, and from the time the Italians invented pesto it has always been prepared with crushed garlic, basil, and European pine nuts blended with olive oil, Parmigiano Reggiano cheese, and including Fiore Sardo, a cheese made from sheep’s milk.`},
-    {name: "Pomodoro", base: "tomato"},
-    {name: "Bechamel", base: "milk"},
-    {name: "Truffle Cream", base: "butter, olive oil"},
-    {name: "Umbrian Ragu", base: "tomato, red wine"},
-    {name: "Carbonara", base: "egg, cream", 
+    {name: "Pomodoro (tomato sauce)", base: "tomato", img: "https://assets.bonappetit.com/photos/57ae32601b33404414975b70/master/pass/quick-pomodoro-sauce-646.jpg",
+    desc: `In 1778, the chef and author Vincenzo Corrado, in his book ‘Cuoco galante,’ (The Chivalrous Cook) mentions for the first time the ‘salsa al pomodoro’, but it will still be some time before it is used as a sauce for pasta. It was Neapolitan street sellers who, at the beginning of the 1800s, started using ‘a pummarola’ (tomato sauce in Neapolitan dialect) to accompany maccheroni.`},
+    {name: "Carbonara", base: "egg, cream", img: "https://www.jocooks.com/wp-content/uploads/2012/05/creamy-carbonara-1-500x500.jpg",
     desc: `Carbonara is most associated with Rome and the Lazio region, but as with so many Italian dishes, in Italy, its origin provokes much speculation and debate. Some connect it to pasta cacio e uova, a Neapolitan dish of pasta tossed with melted lard, beaten raw eggs, and cheese, as documented in Ippolito Cavalcanti's 1839 Neapolitan cookbook. Because the name comes from the word carbonaro, “coal burner,” some believe the dish was created as a hearty easy-to-make meal by men working outdoors for long periods. Others trace it to the Allied liberation of Rome in 1944, with American GIs bringing their daily ration of eggs and bacon to local restaurants to add to the limited Italian menu. Supporting this story is the first written reference to the dish in newspaper La Stampa in 1950, describing it as a dish prized by American servicemen. Shortly after, carbonara also appears in Elizabeth Davids classic 1954 book Italian Food.`},
-    {name: "Vodka", base: "tomato, cream, vodka",
+    {name: "Vodka", base: "tomato, cream, vodka", img: "https://www.alicaspepperpot.com/wp-content/uploads/2019/10/DSC_0419-scaled-720x540.jpg",
     desc: `Like most Italian recipes and sauces, there’s a measure of debate as to where and when it was first established. Unsurprisingly, the two places that lay claim to the invention of vodka sauce are New York City and Italy. We’ll start stateside, with Orsini Restaurant in New York, where it is believed that Chef Luigi Franzese invented, specifically, penne alla vodka, in the 1970s. The second New York-based claim comes from food historians, who posit that the dish was actually invented by James Doty, a Columbia University graduate, who created the dish in the 1980s. As for the Italian origin of the sauce, two separate stories deliver different sides as to who first concocted the creamy sauce in the old world in the 1970s. First, in The Ultimate Pasta Cookbook, author Pasquale Bruno Jr. says vodka sauce was first conjured at a restaurant called Dante in Bologna. But, yet another cookbook, Williams-Sonoma Essentials of Italian, says it was created by a Roman chef who worked for a vodka company and wanted to popularize the spirit in the country.`},
-    {name: "Puttanesca", base: "tomato"},
-    {name: "Arrabbiata", base: "tomato",
+    {name: "Vongole (Clam sauce)", base: "olive oil, clam juice", img: "https://assets.bonappetit.com/photos/57b002b61b3340441497606e/master/pass/spaghetti-alle-vongole.jpg",
+    desc: `Spaghetti alle vongole originated in the city of Naples, on the Italian coast. Clams have formed a part of the local diet since ancient times, so it is perhaps no surprise that a clam pasta dish also originated in the city. The first recorded recipe for what we now recognize as spaghetti alle vongole appears in the cookbook Cucina Teorico-pratica, written by Ippolito Cavalcanti, the Duke of Buonvicino, in 1839. His recipe called for just five ingredients—pasta, olive oil, garlic, parsley, and, of course, fresh clams. While a handful of ingredients have since crept into the dish in Naples, most notably white wine and red pepper, spaghetti alle vongole has changed remarkably little in the intervening years.`},
+    {name: "Arrabbiata", base: "tomato", img: "https://ciaoflorentina.com/wp-content/uploads/2014/06/arrabiata.jpg",
     desc: `According to the tradition, the arrabbiata sauce was born in the early twentieth century in a Roman trattoria whose host wanted to offer its customers an alternative to amatriciana. So, he left tomato and pecorino, added garlic and removed the bacon, replacing the bucatini with the penne and considerably increased the amount of chilli. We do not know if this is really the history of the arrabbiata but the origin is certainly Roman. Federico Fellini immortalized it in his film Roma, in 1972, together with the rigatoni with the pataja (the intestine of the dairy calf), the carbonara and the snails with mint and chilli. He also appeared in the films La Grande Abbuffata (The Great Binge) by Marco Ferreri of 1973 and in the play Sette chili in sette giorni (Seven pounds in seven days) by Luca Verdone in 1986, with Renato Pozzetto and Carlo Verdone.`},
 ];
 
@@ -49,15 +55,23 @@ exports.veges = [
     {name: "Garlic", img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/garlic-braid-1532701804.jpg"},
     {name: "Basil", img: "https://cdn.shopify.com/s/files/1/0156/0137/products/Basil_plant_1280x960_0fc95446-605c-49e3-aa42-c6f3a171b8ae.jpg"},
     {name: "Mushroom", img: "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/278858_2200-732x549.jpg"},
+    {name: "Bell Pepper", img: "https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg"},
+    {name: "Zucchini", img: "https://solidstarts.com/wp-content/uploads/Zucchini_Edited-scaled.jpg"},
+    {name: "Eggplant", img: "https://solidstarts.com/wp-content/uploads/photo7-scaled.jpg"},
+    {name: "Parsely", img: "https://cdn.shopify.com/s/files/1/0570/5324/9692/products/french-parsely-hero.jpg?v=1629374944"},
+    {name: "Celery", img: "https://www.thespruceeats.com/thmb/tJWJXUDAorFNDKimjTcUKNbCWb8=/3797x2848/smart/filters:no_upscale()/cut-celery-sticks-and-leaves-on-wooden-table-157674119-582cc77a3df78c6f6a84d066.jpg"},
+    {name: "Cilantro", img: "https://cdn-prod.medicalnewstoday.com/content/images/articles/277/277627/bunch-of-fresh-coriander-or-cilantro-on-a-wooden-table.jpg"},
 ];
 
 exports.proteins = [
-    {name: "Guanciale (salt-cured pork jowl)", animal: "pork", img: ""},
-    {name: "Pancetta (Italian bacon)", animal: "pork", img: "https://cdn.leitesculinaria.com/wp-content/uploads/2021/03/homemade-pancetta.jpg.optimal.jpg"},
+    {name: "Guanciale (salt-cured pork jowl)", animal: "pork", img: "https://www.finedininglovers.com/sites/g/files/xknfdk626/files/2021-03/guanciale%C2%A9iStock.jpg"},
+    {name: "Pancetta (Italian bacon)", animal: "pork", img: "https://www.mashed.com/img/gallery/the-real-difference-between-pancetta-and-bacon/intro-1588465517.jpg"},
     {name: "Italian sausage", animal: "pork", img: "https://assets.bonappetit.com/photos/57ad3d4c53e63daf11a4dd38/1:1/w_2560%2Cc_limit/spicy-italian-sausage.jpg"},
     {name: "Ground pork", animal: "pork", img: "https://dontsweattherecipe.com/wp-content/uploads/2018/02/Egg-Roll-in-a-Bowl-01.jpg"},
     {name: "Ground beef", animal: "beef", img: "https://www.thespruceeats.com/thmb/0gcp8dIXH7JKXtMdRWw7uV0fiNU=/3504x1971/smart/filters:no_upscale()/ground-beef-draining-184909235-58756f345f9b584db32e02ad.jpg"},
     {name: "Prosciutto (thin country ham)", animal: "pork", img: "https://www.thespruceeats.com/thmb/9ZjXcZ4gWtYnTvcuXLXUX-1rJYA=/2121x1193/smart/filters:no_upscale()/GettyImages-836048106-5bdf38fd46e0fb0051f3546f.jpg"},
-    {name: "Oxtail", animal: "beef", img: ""},
+    {name: "Shrimp", animal: "shrimp", img: "https://solidstarts.com/wp-content/uploads/Shrimp-for-Babies-scaled.jpg"},
+    {name: "Chicken", animal: "chicken", img: "https://www.flavcity.com/wp-content/uploads/2018/10/how-to-poach-chicken-breast-3-480x270.jpg"},
+    {name: "Salmon", animal: "fish", img: "https://www.jessicagavin.com/wp-content/uploads/2020/08/pan-seared-salmon-16.jpg"},
 ];
 

@@ -39,9 +39,11 @@
                 <img src="<%= p.img %>">
                 <div class="d-flex ingredientList">
                     <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
-                    <form action="/ingredients/<%= p._id %>/pastas" method="POST">
-                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
-                    </form>
+                    <% if (user) { %>
+                        <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+                            <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
             <br>
@@ -54,9 +56,11 @@
                 <img src="<%= s.img %>">
                 <div class="d-flex ingredientList">
                     <a href="/ingredients/<%= s._id %>"><%= s.name %></a>
-                    <form action="/ingredients/<%= s._id %>/sauces" method="POST">
-                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
-                    </form>
+                    <% if (user) { %>
+                        <form action="/ingredients/<%= s._id %>/sauces" method="POST">
+                            <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
             <br>
@@ -68,10 +72,12 @@
             <div class="d-flex">
                 <img src="<%= v.img %>">
                 <div class="d-flex ingredientList">
-                    <a href="/ingredients/<%= v._id %>"><%= v.name %></a>
-                    <form action="/ingredients/<%= v._id %>/veges" method="POST">
-                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
-                    </form>
+                    <a href="#"><%= v.name %></a>
+                    <% if (user) { %>
+                        <form action="/ingredients/<%= v._id %>/veges" method="POST">
+                            <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
             <br>
@@ -83,10 +89,12 @@
             <div class="d-flex">
                 <img src="<%= p.img %>">
                 <div class="d-flex ingredientList">
-                    <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
-                    <form action="/ingredients/<%= p._id %>/proteins" method="POST">
-                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
-                    </form>
+                    <a href="#"><%= p.name %></a>
+                    <% if (user) { %>
+                        <form action="/ingredients/<%= p._id %>/proteins" method="POST">
+                            <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
             <br>
@@ -97,10 +105,8 @@
         <h1 class="display-6">Global Users' Dishes:</h1>
         <% meals.forEach(m=>{ %>
             <div class="mealList">
-                <ul>
-                    <li><a href="/ingredients/<%= m._id %>"><%= m.name %></a><br></li>
-                    <!-- aggregate of all reviews, put in table of two columns -->
-                </ul>
+                <a href="/ingredients/<%= m._id %>"><%= m.name %></a><br>
+                <!-- aggregate of all reviews, put in table of two columns -->
             </div>
             <br>
         <% }) %>
@@ -112,9 +118,11 @@
                 <img src="<%= p.img %>">
                 <div class="d-flex ingredientList">
                     <a href="/ingredients/<%= p._id %>"><%= p.name %></a>
-                    <form action="/ingredients/<%= p._id %>/pastas" method="POST">
-                        <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
-                    </form>
+                    <% if (user) { %>
+                        <form action="/ingredients/<%= p._id %>/pastas" method="POST">
+                            <button class="btn btn-danger btn-sm" type='submit'>Add to Build</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
             <br>
