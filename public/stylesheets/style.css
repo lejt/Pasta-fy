@@ -60,7 +60,7 @@ body {
   text-align: center;
   border: 10px solid black;
   width: 300px;
-  margin-left: 30%;
+  margin-left: 10%;
 }
 .descCard {
   background-color: rgba(255, 255, 255, 0.8);
@@ -70,7 +70,7 @@ body {
   border-radius: 5px;
   text-align: center;
   width: 300px;
-  margin-left: 30%;
+  margin-left: 10%;
 }
 
 /* Ingredients index */
