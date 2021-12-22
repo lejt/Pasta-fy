@@ -84,9 +84,9 @@ main img {
   position: relative;
 }
 .ingredientList a {
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1;
-  width: 160px;
+  width: 100px;
 }
 .ingredientList button {
   position: absolute;
