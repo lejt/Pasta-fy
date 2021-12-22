@@ -57,7 +57,7 @@ function combine(req, res) {
         build.pasta.splice(deleteIdxPasta, 1);
         build.sauce.splice(deleteIdxSauce, 1);
 
-        // check state of checkboxes for vege and protein and delete if necessary
+        // check state of checkboxes for vege/protein and delete if necessary
         if (!req.body.vege && !req.body.protein) {
             req.body.vege = [];
             req.body.protein = [];
@@ -69,14 +69,13 @@ function combine(req, res) {
         buildVegeArrId = build.vege.map(v=> v._id);
         buildProteinArrId = build.protein.map(p=> p._id);
 
-        if (typeof req.body.vege === 'string') {
-            req.body.vege = [req.body.vege];
-        } 
-        if (typeof req.body.protein === 'string') {
-            req.body.protein = [req.body.protein];
-        } 
-
         for (let i=0; i<buildVegeArrId.length; i++) {
+            // when there is only one element in list, the list will become a 
+            // string (i.e. list = "element1") instead of list = ["element1"], 
+            // so a solution is proposed in the if statement below
+            if (typeof req.body.vege === 'string') {
+                req.body.vege = [req.body.vege];
+            } 
             for (let j=0; j<req.body.vege.length; j++) {
                 if (buildVegeArrId[i] == req.body.vege[j]) {
                     build.vege.splice(i, 1);
@@ -84,6 +83,9 @@ function combine(req, res) {
             }
         };
         for (let i=0; i<buildProteinArrId.length; i++) {
+            if (typeof req.body.protein === 'string') {
+                req.body.protein = [req.body.protein];
+            } 
             for (let j=0; j<req.body.protein.length; j++) {
                 if (buildProteinArrId[i] == req.body.protein[j]) {
                     build.protein.splice(i, 1);
