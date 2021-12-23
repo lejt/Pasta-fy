@@ -164,14 +164,14 @@ footer p {
     text-align: center;
   }
   .titleCard {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(213, 214, 157);
     width: 60vw;
     margin-top: 10vw;
     margin-left: 50%;
     transform: translateX(-50%);
   }
   .descCard {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(170, 170, 131);
     width: 400px;
     margin-left: 50%;
     transform: translateX(-50%);
