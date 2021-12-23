@@ -5,8 +5,7 @@
 ![Pasta-Fy-Meals](/public/assets/images/pastafy_MealsPage.jpg)
 ![Pasta-Fy-Details](/public/assets/images/pastafy_DetailsPage.jpg)
 
-|<img src="/public/assets/images/pastafy_HomePage.jpg" width=100px height=110px overflow="hidden"> | <img  src="/public/assets/images/pastafy_IngredientsPage.jpg" width=100px  height=110px overflow="hidden"> | <img src="/public/assets/images/pastafy_BuildPage.jpg" width=100px  height=110px overflow="hidden"> |  <img src="/public/assets/images/pastafy_MealsPage.jpg" width=100px  height=110px overflow="hidden">
-| <img src="public/images/reviews-section.png" width=100px height=110px overflow="hidden"> | <img src="/public/assets/images/pastafy_DetailsPage.jpg" width=100px  height=110px overflow="hidden">| 
+|<img src="/public/assets/images/pastafy_HomePage.jpg" width=100px height=110px overflow="hidden"> | <img  src="/public/assets/images/pastafy_IngredientsPage.jpg" width=100px  height=110px overflow="hidden"> | <img src="/public/assets/images/pastafy_BuildPage.jpg" width=100px  height=110px overflow="hidden"> |  <img src="/public/assets/images/pastafy_MealsPage.jpg" width=100px  height=110px overflow="hidden"> | <img src="/public/assets/images/pastafy_DetailsPage.jpg" width=100px  height=110px overflow="hidden">| 
 
 ## Table of Contents
 * [General Information](#general-information)
