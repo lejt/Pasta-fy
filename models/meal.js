@@ -16,7 +16,6 @@ const mealSchema = new Schema({
     sauce: {type: Schema.Types.ObjectId, ref: 'Sauce'},
     vege: [{type: Schema.Types.ObjectId, ref: 'Vege'}],
     protein: [{type: Schema.Types.ObjectId, ref: 'Protein'}],
-    ingredients: [{type: String}],
     desc: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,

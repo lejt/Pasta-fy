@@ -26,12 +26,19 @@
         <% } %>
       </div>
     </nav>
-<br>
+<br><br>
 
 <% if (pasta) { %>
     <div class="ingredientDetail">
         <h1 class="display-1"><%= pasta.name %></h1><hr><br>
-        <img src="<%= pasta.img %>"> Brief history: <br> <%= pasta.desc %>
+        <div class="d-flex">
+            <div>
+                <img src="<%= pasta.img %>">
+            </div>
+            <div class="ingredientsDesc">
+                <strong>Brief history:</strong> <br><%= pasta.desc %>
+            </div>
+        </div>
     </div>
 <% } %>
 <% if (sauce) { %>

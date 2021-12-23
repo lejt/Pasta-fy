@@ -5,7 +5,6 @@ const sauceSchema = new Schema({
     name: String,
     base: String,
     desc: String,
-    recommend: String,
     img: String,
 }, {timestamps: true});
 

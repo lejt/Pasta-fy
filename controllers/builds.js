@@ -48,59 +48,42 @@ function combine(req, res) {
     req.body.name = req.body.mealName;
     req.body.userName = req.user.name;
 
-    // deletes the items off list if used to generate a meal 
-    Build.findOne({user: req.user._id}, function(err, build) {
+    Build.findOne({user: req.user._id})
+        .populate('pasta')
+        .populate('sauce')
+        .populate('vege')
+        .populate('protein')
+        .exec(function(err, build) {
 
-        // find idx and delete them off build list if used in combine
-        const deleteIdxPasta = build.pasta.findIndex(p=> p._id == req.body.pasta);
-        const deleteIdxSauce = build.sauce.findIndex(s=> s._id == req.body.sauce);
-        build.pasta.splice(deleteIdxPasta, 1);
-        build.sauce.splice(deleteIdxSauce, 1);
+            const deleteIdxPasta = build.pasta.findIndex(p=> p._id == req.body.pasta);
+            const deleteIdxSauce = build.sauce.findIndex(s=> s._id == req.body.sauce);
+            build.pasta.splice(deleteIdxPasta, 1);
+            build.sauce.splice(deleteIdxSauce, 1);
 
-        // check state of checkboxes for vege/protein and delete if necessary
-        if (!req.body.vege && !req.body.protein) {
-            req.body.vege = [];
-            req.body.protein = [];
-        } 
-        if (!req.body.vege) req.body.vege = [];
-        if (!req.body.protein) req.body.protein = [];
-        
-        // take only the ids and make a copy
-        buildVegeArrId = build.vege.map(v=> v._id);
-        buildProteinArrId = build.protein.map(p=> p._id);
-
-        for (let i=0; i<buildVegeArrId.length; i++) {
-            // when there is only one element in list, the list will become a 
-            // string (i.e. list = "element1") instead of list = ["element1"], 
-            // so a solution is proposed in the if statement below
-            if (typeof req.body.vege === 'string') {
-                req.body.vege = [req.body.vege];
+            if (!req.body.vege && !req.body.protein) {
+                    req.body.vege = [];
+                    req.body.protein = [];
             } 
-            for (let j=0; j<req.body.vege.length; j++) {
-                if (buildVegeArrId[i] == req.body.vege[j]) {
-                    build.vege.splice(i, 1);
-                }
-            }
-        };
-        for (let i=0; i<buildProteinArrId.length; i++) {
-            if (typeof req.body.protein === 'string') {
-                req.body.protein = [req.body.protein];
-            } 
-            for (let j=0; j<req.body.protein.length; j++) {
-                if (buildProteinArrId[i] == req.body.protein[j]) {
-                    build.protein.splice(i, 1);
-                }
-            }
-        };
-    
-        build.save(function(err) {
-            if (err) console.log(err);
+            if (!req.body.vege) req.body.vege = [];
+            if (!req.body.protein) req.body.protein = [];
+            
+            req.body.vege.forEach(v => {
+                let deleteIdxVege = build.vege.findIndex(bv=> bv._id == v);
+                build.vege.splice(deleteIdxVege, 1);
+            })
+            req.body.protein.forEach(p => {
+                let deleteIdxProtein = build.protein.findIndex(bp=> bp._id == p);
+                build.protein.splice(deleteIdxProtein, 1);
+            })
 
-            req.body.user = req.user._id;
-            Meal.create(req.body, function(err, meal) {
-                // console.log(meal)
-                res.redirect('/builds');
+            build.save(function(err) {
+                if (err) console.log(err);
+
+                req.body.user = req.user._id;
+                Meal.create(req.body, function(err, meal) {
+                    // console.log(meal)
+                    res.redirect('/builds');
+                })
             })
         })
-    })
 }
