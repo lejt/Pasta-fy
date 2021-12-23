@@ -26,8 +26,7 @@
   <br>
 
 <div id="main_content">
-
-    <li class="selected" id="page1" onclick="change_tab(this.id);">Pasta</li>
+    <li class="notselected" id="page1" onclick="change_tab(this.id);">Pasta</li>
     <li class="notselected" id="page2" onclick="change_tab(this.id);">Sauce</li>
     <li class="notselected" id="page3" onclick="change_tab(this.id);">Vegetables</li>
     <li class="notselected" id="page4" onclick="change_tab(this.id);">Proteins</li>
@@ -112,7 +111,7 @@
             </div>
         <% }) %>
     </div>
-    
+    <!-- default page on page load/refresh, same content as page 1 -->
     <div id="page_content">
         <% pastas.forEach(p=>{ %>
             <div class="d-flex">
