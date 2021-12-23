@@ -1,9 +1,4 @@
-# Pasta-Fy
-![Pasta-Fy](/public/assets/images/pastafy_HomePage.jpg)
-![Pasta-Fy-Ingredients](/public/assets/images/pastafy_IngredientsPage.jpg)
-![Pasta-Fy-Build](/public/assets/images/pastafy_BuildPage.jpg)
-![Pasta-Fy-Meals](/public/assets/images/pastafy_MealsPage.jpg)
-![Pasta-Fy-Details](/public/assets/images/pastafy_DetailsPage.jpg)
+# PASTA-FY
 
 |<img src="/public/assets/images/pastafy_HomePage.jpg" width=100px height=110px overflow="hidden"> | <img  src="/public/assets/images/pastafy_IngredientsPage.jpg" width=100px  height=110px overflow="hidden"> | <img src="/public/assets/images/pastafy_BuildPage.jpg" width=100px  height=110px overflow="hidden"> |  <img src="/public/assets/images/pastafy_MealsPage.jpg" width=100px  height=110px overflow="hidden"> | <img src="/public/assets/images/pastafy_DetailsPage.jpg" width=100px  height=110px overflow="hidden">| 
 
