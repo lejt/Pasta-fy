@@ -1,5 +1,5 @@
 # Pasta-Fy
-![Pasta-Fy](assets/images/pastafy_HomePage.jpg)
+![Pasta-Fy](/public/assets/images/pastafy_BuildPage.jpg)
 
 ## General Information
 This heroku deployed web app contains information of different components of pasta and is a pasta dish generator. Ingredients are separated into four major components of: Pasta, Sauce, Vegetables, and Protein. Browsing the ingredients page allows for the adding of ingredients onto a builds page. Further clicking on an individual item brings a details page showing specific history and nutritional information. The builds page contains all the items you have clicked as a user and displays a form to mix and match ingredients. A complete dish can be submitted and will display on the meals page for all users to see and reviews. 
