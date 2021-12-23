@@ -21,7 +21,6 @@ function index(req, res) {
         })
 };
 
-
 function combine(req, res) {
     req.body.name = req.body.mealName;
     req.body.userName = req.user.name;

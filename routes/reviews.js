@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const isLoggedIn = require('../config/auth');
 const reviewsCtrl = require('../controllers/reviews')
 
 // POST '/ingredients/:id/reviews' page for review adding

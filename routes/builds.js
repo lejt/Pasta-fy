@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// const isLoggedIn = require('../config/auth');
 const buildsCtrl = require('../controllers/builds');
 
 // GET '/' page to create a pasta dish

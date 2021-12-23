@@ -71,7 +71,6 @@
 <% if (meal) { %>
     <h1 class="display-1"><%= meal.name %></h1>
     created by: <%= meal.userName %>
-    <!-- include aggregate rating -->
     <hr>
     <div class="meal-info-container">
         <div class="ingredients-container">
@@ -142,8 +141,8 @@
                 <button class="btn btn-primary" type="submit">Add Review</button>
             </form>
         </div>
-        
     <% } %>
+
     <!-- SHOW SUBMITTED REVIEWS -->
     <h4 class="display-6">Reviews</h4> <hr>
     <% if (meal.reviews.length) { %>

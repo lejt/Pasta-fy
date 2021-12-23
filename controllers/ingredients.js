@@ -35,7 +35,6 @@ function index(req, res) {
 };
 
 function show(req, res) {
-    
     // open show page based on what was clicked
     // tests req.params.id in all categories and will only output the category that contains it
     Pasta.findById(req.params.id, (err, pasta)=> {
@@ -44,10 +43,8 @@ function show(req, res) {
                 Protein.findById(req.params.id, (err, protein)=> {
                     Meal.findById(req.params.id, (err, meal)=> {
                         if (pasta || sauce || vege || protein) {
-                            console.log('first option printed');
                             res.render('ingredients/show', {pasta, sauce, vege, protein, meal})
                         } else {
-                            console.log('second option printed');
                             Meal.findById(req.params.id)
                             .populate('pasta')
                             .populate('sauce')
@@ -63,13 +60,9 @@ function show(req, res) {
             })
         })
     })
-
-
 }
 
-
 function createPasta(req, res) {
-
     // req.user._id is whoever is signed in 
     Build.findOne({user: req.user._id}, function(err, build) {
         if (!build.pasta) {
@@ -117,11 +110,6 @@ function deleteSelectedPasta(req, res) {
             console.log(build.pasta);
             res.redirect('/builds');
         })
-
-        // you can use this instead of function(err) cb above
-        // build.save().then(function() {
-        //     res.redirect('/builds');
-        // })
     })
 }
 
@@ -176,11 +164,9 @@ function createDesc(req, res) {
 }
 
 function updateDesc(req, res) {
-    console.log('update initiated')
     // user who created the build on this page should also be the same owner of reviews
     Meal.findById(req.params.id, (err, meal)=> {
         if (!meal.user.equals(req.user._id)) return res.redirect(`/ingredients/${req.params.id}`);
-        console.log('after verfi')
         meal.desc = req.body.desc;
 
         meal.save(function(err) {
@@ -188,5 +174,4 @@ function updateDesc(req, res) {
             res.redirect(`/ingredients/${req.params.id}`)
         })
     })
-    // Build.findOne({user: req.user._id}, function(err, build) {
 }

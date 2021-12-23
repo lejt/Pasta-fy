@@ -1,6 +1,4 @@
-
-// have to $node seeds, then use nodemon
-
+// Make sure to '$node seeds' in console to preload data before running web app with new database
 
 var createError = require('http-errors');
 var express = require('express');

@@ -18,7 +18,6 @@ function create(req, res) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
-        // console.log(req.body.reviewRating) shows number
 
         meal.reviews.push(req.body);
         meal.save(function(err) {
@@ -46,9 +45,6 @@ function deleteReview(req, res) {
 }
 
 function updateReview(req, res) {
-    console.log('UPDATE HERE');
-    //replace old content with new content, replace review, replace date, same name
-    
     Meal.findOne({"reviews._id": req.params.id}, (err, meal)=> {
         const review = meal.reviews.id(req.params.id);
         if (!review.user.equals(req.user._id)) return res.redirect(`/ingredients/${meal._id}`);
