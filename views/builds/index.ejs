@@ -124,7 +124,7 @@
           </select><hr>
         <label id="combineVege">Vegetable</label><br>
           <% build.vege.forEach(bv=> { %>
-            <input type="checkbox" value="<%= bv.id %>" name="vege"> <%= bv.name %><br>
+            <input type="checkbox" value="<%= bv._id %>" name="vege"> <%= bv.name %><br>
           <% }) %>
           <% if (!build.vege.length) { %>
             - None selected - <br>
@@ -132,7 +132,7 @@
           <br>
         <label id="combineProtein">Protein</label><br>
           <% build.protein.forEach(bp=> { %>
-            <input  type="checkbox" value="<%= bp.id %>" name="protein"> <%= bp.name %><br>
+            <input  type="checkbox" value="<%= bp._id %>" name="protein"> <%= bp.name %><br>
           <% }) %>
           <% if (!build.protein.length) { %>
             - None selected - <br>

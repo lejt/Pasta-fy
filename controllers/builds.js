@@ -11,35 +11,13 @@ module.exports = {
 }
 
 function index(req, res) {
-    // Build.findOne({user: req.user._id})
-    // .populate('pasta')
-    // .exec(function (err, build) {
-    //     // Pasta.find({_id: builds.pasta}, function(err, pasta) {
-    //     //     Sauce.find({_id: builds.sauce}, function(err, sauce) {
-    //             console.log(build.pasta);
-    //             res.render('builds/index', {build})
-    //     //     })
-    //     // })
-    // })
     Build.findOne({user: req.user._id})
         .populate('pasta')
         .populate('sauce')
         .populate('vege')
         .populate('protein')
         .exec(function(err, build) {
-            // Pasta.find({_id: build.pasta}, function(err, pastas) {
-            //     Sauce.find({_id: build.sauce}, function(err, sauces) {
-            //         Vege.find({_id: build.vege}, function(err, veges) {
-            //             Protein.find({_id: build.protein}, function(err, proteins) {
-                            // console.log(pastas);
-                            // console.log(sauces);
-                            // console.log(veges);
-                            // console.log(proteins);
                             res.render('builds/index', {build});
-                //         })
-                //     })
-                // })
-            // })
         })
 };
 
@@ -67,10 +45,18 @@ function combine(req, res) {
             if (!req.body.vege) req.body.vege = [];
             if (!req.body.protein) req.body.protein = [];
             
+            if (typeof req.body.vege == 'string') {
+                req.body.vege = [req.body.vege];
+            }
+            if (typeof req.body.protein == 'string') {
+                req.body.protein = [req.body.protein];
+            }
+
             req.body.vege.forEach(v => {
                 let deleteIdxVege = build.vege.findIndex(bv=> bv._id == v);
                 build.vege.splice(deleteIdxVege, 1);
             })
+
             req.body.protein.forEach(p => {
                 let deleteIdxProtein = build.protein.findIndex(bp=> bp._id == p);
                 build.protein.splice(deleteIdxProtein, 1);
