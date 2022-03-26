@@ -97,6 +97,9 @@ body {
   padding-bottom: 0.5em;
   text-align: center;
 }
+.ingredientList p {
+  text-align: center;
+}
 .ingredientList button {
   border: 1px solid rgb(0, 0, 0);
   color: black;
@@ -148,12 +151,12 @@ footer p {
     background-color: transparent;
   }
   #pastafyLogo img {
-    height: 50px;
+    height: 40px;
     margin-right: 10px;
     margin-top: -15px;
   }
   .navbar-brand span {
-    font-size: 40px;
+    font-size: 30px;
   }
   .navbar a {
     padding: 0 20px;
@@ -182,6 +185,9 @@ footer p {
     background-color: rgba(92, 92, 65, 0.9);
     color: white;
     width: 500px;
+  }
+  .descCard p {
+    font-size: 1em;
   }
 
   #page_content img {

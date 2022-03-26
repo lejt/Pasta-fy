@@ -20,7 +20,7 @@ This heroku deployed web app contains information on different pasta components 
 
 ## Features
 ### Usage
-* [Click Here](https://pastafysei.herokuapp.com/) to visit my web app!
+* [Click Here](https://pastafysei.herokuapp.com/) to visit my app, it is mobile and web facing!
 * [Project Planning](https://trello.com/b/LUV2IT1J/pasta-fyproject) with WireFrames and ERD.
 
 ### Implemented
