@@ -38,7 +38,7 @@ exports.pastas = [
 ];
 
 exports.sauces = [
-    {name: "Marinara", base: "tomato", img: "https://thecozyapron.com/wp-content/uploads/2020/04/marinara-sauce_thecozyapron_1.jpg",
+    {name: "Marinara", base: "tomato", img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-marinara-sauce-horizontal-3-1541542819.jpg?crop=1xw:1xh;center,top&resize=480:*",
     desc: `The exact location of Marinara Sauce’s creation seems to be lost to time, but it was likely first developed in the southern region of Italy, in either Naples or Sicily, after tomatoes first appeared in Europe via explorers from the New World in the 16th century. This comes well after the first forms of pasta arrived, which arrived on Italian shores with Arab traders in the 12 century. 
     Tomato sauce is first referenced in the Italian cookbook Lo Scalco alla Moderna (The Modern Steward), written by Italian chef Antonio Latini in 1692. Meanwhile, a recipe for pasta with tomato sauce appears in the 1790 cookbook, L’Apicio Moderno, by chef Francesco Leonardi.
     As for how a particular preparation of tomato sauce came to be known as “marinara,” one needs to look toward the sea. “Marinara” translates to “seafaring”—or colloquially to “sailor style” or “mariner style.” It was given the name marinara not because it was once a seafood-style sauce, but because it was the preferred meal of Italy’s merchants during long expeditions at sea.`},

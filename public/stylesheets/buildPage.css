@@ -1,17 +1,35 @@
-/* Build Page */
+.build-page {
+  margin: 0 auto;
+  max-width: 90vw;
+  padding: 5em 0;
+  height: 100%;
+  min-height: 100vh;
+}
+.build-page .display-5 {
+  color:rgb(206, 206, 183);
+  text-shadow: #2e2e2e 1px 1px 0;
+} 
+.build-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.selected-container {
+  padding-bottom: 5em;
+}
+.selected-container h1 {
+  color:rgb(232, 191, 138);
+}
 .textBgBuild {
-    background-color: rgb(153, 131, 89);
-    width: 45vw;
-    height: 100px;
-    overflow: auto;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 5px 10px 20px inset;
+  background-color: rgb(153, 131, 89);
+  max-height: 10em;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px inset;
 }
 .textBgCombine {
     background-color: beige;
-    width: 45vw;
-    height: 75vh;
     overflow: auto;
     padding: 10px;
     border-radius: 5px;
@@ -26,6 +44,12 @@
 }
 #combineSauce {
     background-color:rgb(223, 35, 35);
+}
+.combine-checkbox {
+    padding: 10px;
+}
+.combine-checkbox input {
+    margin: 10px;
 }
 #combineVege {
     background-color:rgb(11, 155, 54);
@@ -146,4 +170,40 @@
 }
 .button-82-pushable:focus:not(:focus-visible) {
   outline: none;
+}
+
+
+@media only screen and (min-width: 769px) { 
+
+  .build-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .selected-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .textBgBuild {
+    background-color: rgb(153, 131, 89);
+    height: 100px;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 20px inset;
+  }
+  .textBgCombine {
+    background-color: beige;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    height: 75vh;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .build-divider {
+    border-right: 5px solid rgb(94, 147, 94);
+  }
 }

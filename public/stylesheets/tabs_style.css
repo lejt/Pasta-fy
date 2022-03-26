@@ -1,9 +1,12 @@
 #main_content {
-    margin: 40px auto 0;
+    margin: 0 auto;
     max-width: 90vw;
+    padding: 5em 0;
+    height: 100%;
+    min-height: 100vh;
 }
 #main_content li {
-    display:inline;
+    display: inline;
     list-style-type:none;
     padding-top: 12px;             
     padding-bottom: 12px;
@@ -27,14 +30,14 @@
     visibility: hidden;
 }
 #main_content #page_content {
-    background-color:#974322;
+    background: linear-gradient(#974322,rgb(181, 118, 2));
     padding: 30px;              
     margin-top: 9px;
     border-radius:0px 5px 5px 5px;
     box-shadow: 5px 10px rgba(0,0,0,0.5);
     line-height: 1.6em;
     word-spacing:4px;
-    height: 70vh;
+    /* height: 70vh; */
     overflow: auto;
 }
 
@@ -53,5 +56,8 @@
         padding-right: 25x;            
         padding-left: 25px;
         font-size: 25px;
+    }
+    #main_content #page_content {
+        background: linear-gradient(#974322,rgb(125, 83, 5));
     }
 }

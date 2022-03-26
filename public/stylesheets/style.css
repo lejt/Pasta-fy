@@ -1,116 +1,135 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: linear-gradient(rgb(60, 83, 60), rgb(29, 94, 85));
-  min-height: 100vh;
-  min-width: 98vw;
+  background: linear-gradient(to bottom right, rgb(61, 165, 129), rgb(4, 41, 19));
   position: relative;
-  padding-top: 23px;
-  padding-bottom: 100px;
 }
-/* Nav */
+/* MOBILE-FACING CSS */
 .navbar {
   padding: 0 5px;
   background-color: rgb(190, 46, 46);
   position: relative;
+  border-bottom: 1px solid rgb(136, 2, 2);
 }
 #pastafyLogo img {
   height: 35px;
   margin-right: 10px;
   margin-top: -10px;
 }
-.navbar a {
-  padding: 0 5px;
-  color:rgb(14, 80, 58);
-  font-size: 18px;
-}
 .navbar-brand span {
   color: rgb(255, 255, 255);
   font-size: 23px;
 }
-.navbarLinks {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
-}
-/* Home Page */
-.homeLayout {
-  margin-top: 10px;
-  height: 100vh;
-  width: 100%;
-}
-.homeSplash img {
-  max-width: 100vw;
-  position: absolute;
-  left: -1px;
-  z-index:-1;
-}
-.homeMsg {
-  width: 100%;
-}
-.titleCard {
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 5px;
+.navbar-nav {
   text-align: center;
-  border: 10px solid black;
-  width: 300px;
-  margin-left: 8%;
+  background-color: rgb(157, 65, 45);
 }
-.descCard {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
-  margin: 0 auto;
-  border: 8px solid black;
-  border-radius: 5px;
-  text-align: center;
-  width: 300px;
-  margin-left: 8%;
+.nav-item {
+  border: 1px dashed rgb(162, 23, 23);
+}
+.nav-item a {
+  text-decoration: none;
+  color: white;
 }
 
-/* Ingredients index */
+/* Home Page */
+.homeLayout {
+  height: 100vh;
+  background: url("https://i.imgur.com/0RVhRmA.jpg");
+  background-position: right;
+}
+.homeMsg {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.titleCard, .descCard {
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  width: 22em;
+}
+.titleCard {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.8), rgb(182, 167, 119));
+  padding: 10px;
+  border: 5px dashed rgb(28, 138, 124);
+  color:rgb(28, 138, 124);
+  text-shadow: 2px 5px rgba(8, 142, 139, 0.1);
+}
+.descCard {
+  background-color: rgba(171, 84, 57, 0.8);
+  padding: 10px 20px;
+  color: rgb(9, 48, 43);
+}
+.homeMsg button {
+  max-width: 200px;
+  padding: 20px 20px;
+  font-size: 1.5em;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #37744e;
+}
+.homeMsg a {
+  color: #69d291;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+/* Explore Page */
 #page_content img {
   height: 100px;
   width: 100px;
-  border: 5px solid rgb(14, 80, 58);
+  border: 5px solid rgb(31, 171, 99);
   border-radius: 50%;
-  margin-left: -15px;
 }
 .ingredientList {
-  margin-top: 30px;
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   position: relative;
+  border-bottom: 1px dashed rgb(100, 179, 96);
 }
 .ingredientList a {
   font-size: 15px;
-  line-height: 1;
-  width: 80px;
+  line-height: 1.2;
+  padding-bottom: 0.5em;
+  text-align: center;
 }
 .ingredientList button {
-  position: absolute;
   border: 1px solid rgb(0, 0, 0);
   color: black;
-  right: 0;
+  background: linear-gradient(rgb(179, 179, 131), rgb(61, 152, 87));
 }
-.mealList {
-  font-size: 20px;
+
+.enlarge {
+  transform: scale(0.75,0.75);
+  transition: 2s all ease;
 }
+.enlarge.active {
+  transform: scale(1,1);
+}
+.meal-header {
+  color:rgb(206, 206, 183);
+  text-shadow: #2e2e2e 1px 1px 0;
+}
+.mealList a {
+  font-size: 1.5em;
+}
+
 /* Ingredients details (show) */
 pasta.img, sauce.img, vege.img, protein.img {
   height: 100px;
 } 
+
+
 /* Footer */
 footer {
-  background-color:rgb(14, 80, 58);
+  background-color:rgb(1, 36, 24);
   height: 30px;
   position: relative;
+  /* border: 1px solid yellow; */
 }
 footer p {
   position: absolute;
@@ -119,113 +138,70 @@ footer p {
   left: 50vw;
   transform: translateX(-50%);
 }
-/* ----------------- MEDIA QUERY ------------------- */
+
+/* ----------------- WEB BASED MEDIA QUERY ------------------- */
 @media only screen and (min-width: 769px) {
-  body {
-    padding-top: 53px;
-    padding-bottom: 50px;
-  }
-  /* Header */
   .navbar {
-    padding: 0 5px;
+    background: linear-gradient(to right, rgb(191, 72, 72), rgb(96, 25, 11));
+  }
+  .navbar-nav {
+    background-color: transparent;
   }
   #pastafyLogo img {
     height: 50px;
     margin-right: 10px;
     margin-top: -15px;
   }
+  .navbar-brand span {
+    font-size: 40px;
+  }
   .navbar a {
     padding: 0 20px;
     font-size: 20px;
   }
-  .navbar-brand span {
-    font-size: 40px;
+  .nav-item {
+    border: none;
   }
-  /* Home Page */
+  .nav-item a {
+    color: #262626;
+  }
+  .nav-item a:hover {
+    color: #e3e3e3;
+  }
+
   .homeLayout {
-    display: flex;
-    height: 100vh;
-  }
-  .homeSplash {
-    width: 50vw;
-    max-height: 100vh;
-    overflow: hidden;
-    /* border: 1px solid blue; */
-    margin-left: -15px;
-    margin-top: -15px;
-  }
-  .homeSplash img {
-    position: relative; 
-    z-index: -1;
-  }
-  .homeMsg {
-    position: absolute;
-    top: 80px;
-    text-align: center;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .titleCard {
     background-color: rgb(213, 214, 157);
     width: 60vw;
-    margin-top: 10vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
   }
   .descCard {
-    background-color: rgb(170, 170, 131);
-    width: 400px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    background-color: rgba(92, 92, 65, 0.9);
+    color: white;
+    width: 500px;
   }
-  .verticalLine {
-    background-color: #000;
-    height: 100vh;
-    margin: 0 auto;
-    position: absolute;
-    top: 75px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
+
+  #page_content img {
+    height: 150px;
+    width: 150px;
+    border: 10px solid rgb(28, 82, 54);
   }
-  /* Ingredients index */
-  .ingredientList {
-    margin-top: 30px;
-    margin-left: 20px;
-    overflow: hidden; 
-    position: relative;
+  .ingredientList a:hover {
+    transform: scale(1.2,1.2);
   }
-  .ingredientList a {
-    font-size: 30px;
-    line-height: 1;
-    width: 60vw;
-  }
-  .ingredientList p {
-    font-size: 30px;
-    line-height: 1;
-    width: 60vw;
+  .ingredientList a,p {
+    font-size: 2em;
+    color: black;
   }
   .ingredientList button {
-    position: absolute;
-    right: 0;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: black;
+    background: linear-gradient(rgb(179, 179, 131), rgb(61, 152, 87));
   }
-  .mealList {
-    font-size: 20px;
-  }
-  .mealList ul {
-    padding: 0;
-    margin-left: 30px;
-    display: list-item;
-    list-style-type: square;
-  }
-  /* Ingredients details (show) */
-  pasta.img, sauce.img, vege.img, protein.img {
-    height: 100px;
-  } 
-  /* Footer */
-  footer {
-    height: 30px;
-  }
-  footer p {
-    margin: 0 auto;
-    font-size: 20px;
-  }
+
 }

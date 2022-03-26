@@ -1,7 +1,22 @@
+.details_page {
+  margin: 0 auto;
+  max-width: 90vw;
+  padding: 5em 0;
+  height: 100%;
+  min-height: 100vh;
+}
+.ingredientDetail .ingredient-history {
+  background-color: antiquewhite;
+  padding: 10px;
+}
 .ingredientDetail img {
     height: 30vw;
     width: 30vw;
-    border: 10px solid rgb(73, 38, 6);
+    border: 10px solid rgb(121, 19, 1);
+}
+.display-1 {
+  color:rgb(206, 206, 183);
+  text-shadow: #2e2e2e 1px 1px 0;
 }
 .meal-info-container {
   background-color: rgb(206, 206, 183);
@@ -13,7 +28,13 @@
   overflow-wrap: break-word;
   overflow-y: auto;
   line-height: 2;
-  padding: 0 10px;
+  padding: 0px 10px;
+}
+.desc-container {
+  padding-bottom: 20px;
+}
+.modal-update-desc button {
+  background-color: rgb(139, 162, 124);
 }
 .ingredientsDesc {
   padding: 0 20px;
@@ -69,7 +90,7 @@
 
 /* Reviews - add Review */
 .reviewBox {
-  width: 70vw;
+  /* width: 70vw; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -77,13 +98,15 @@
   color: rgb(0, 0, 0);
 }
 .reviewBox textarea {
-  width: 30vw;
+  width: 100%;
   height: 10vw;
   margin-left: 50%;
   transform: translateX(-50%);
 }
 .reviewBox button {
-  float: right;
+  margin: 0 auto;
+  background-color: rgb(55, 113, 182);
+  color: rgb(129, 203, 235);
 }
 /* show added Reviews */
 .reviews-container {
@@ -173,18 +196,49 @@
 /* EDIT REVIEWS */
 .starUpdate {
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+.edit-review button {
+  background-color: rgb(55, 113, 182);
+  color: rgb(129, 203, 235);
 }
 
 /* ----------------- MEDIA QUERY ------------------- */
 @media only screen and (min-width: 769px) {
+
+  .meal-info-container {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
   /* show added Reviews */
   .reviews-container {
     position: relative;
     background-color: rgb(206, 206, 183);
     box-shadow: 5px 10px rgba(0,0,0,0.5);
     padding: 10px;
+    max-width: 900px;
     width: 80vw;
     margin: 0 auto;
+  }
+  .reviewBox {
+    color: rgb(254, 254, 254);
+  }
+  .reviewBox textarea {
+    width: 600px;
+    height: 100px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .reviewBox button {
+    margin: 0 auto;
+    background-color: rgb(55, 113, 182);
+    color: rgb(129, 203, 235);
+    border: 2px solid rgb(109, 137, 147);
+  }
+  .reviewBox button:hover {
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(75, 147, 235);
   }
 }

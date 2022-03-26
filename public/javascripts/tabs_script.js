@@ -36,3 +36,25 @@ function change_tab(id) {
    document.getElementById("page5").className="notselected";
    document.getElementById(id).className="selected";
 };
+
+// ENLARGE PICTURE UPON SCROLL
+function enlarge() {
+   const enlarges = document.querySelectorAll(".enlarge");
+
+   for (let i = 0; i < enlarges.length; i++) {
+      let windowHeight = window.innerHeight;
+
+      let elementTop = enlarges[i].getBoundingClientRect().top;
+      let elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+         enlarges[i].classList.add("active");
+      } else {
+         enlarges[i].classList.remove("active");
+
+      }
+   }
+
+}
+
+window.addEventListener("scroll", enlarge);
